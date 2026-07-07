@@ -2,3 +2,6 @@ assets/photos/source/
 .vercel/
 node_modules/
 tools/
+
+.vercel
+.env*
