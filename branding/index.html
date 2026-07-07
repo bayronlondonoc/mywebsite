@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MANUAL INTERNO — NO INDEXAR -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Manual de Marca</title>
+<script>
+/* ============================================================
+   BRAND DATA — Claude reemplaza este objeto con el contenido
+   real de brand-[Marca].json (el JSON completo, sin editar).
+   ============================================================ */
+const BRAND = {
+  "meta": {
+    "version": "1.0",
+    "generated_date": "2026-07-06",
+    "source_brief": "brief-BayronLondono.docx",
+    "language": "es"
+  },
+  "brand": {
+    "name": "Bayron Londoño",
+    "short_name": "Bayron",
+    "industry": "Marca personal",
+    "subcategory": "Turismo experiencial, hospitalidad, café y fotografía",
+    "tagline": "La elegancia de servir en silencio",
+    "mission": "Servir a través del viaje, la hospitalidad, el café y la fotografía — mostrando la Colombia auténtica y buena.",
+    "vision": "Ser el punto de referencia colombiano donde viaje, alojamiento, café y contenido conviven bajo un mismo estándar de detalle y autenticidad.",
+    "purpose": "Servir y mostrarle al mundo la Colombia buena, viviendo su fe de forma auténtica a través de lo que construye.",
+    "brand_story": "Bayron nació en Nariño, Antioquia, y aprendió a amar la montaña recorriendo esas rutas desde niño. Hoy, tras más de diez años en turismo y hospitalidad, construyó un ecosistema completo —viaje, alojamiento, café, fotografía— con un solo propósito: servir, y mostrarle al mundo la Colombia buena. Su fe es silenciosa, pero está en cada detalle.",
+    "target_market": "Viajeros, propietarios, huéspedes y amantes del café que valoran la autenticidad y el detalle por encima del volumen; también marcas que buscan fotografía o desarrollo web con estética cuidada.",
+    "ideal_customer": {
+      "age_range": "25–55",
+      "gender": "Todos",
+      "location": "Colombia y viajeros internacionales hacia Colombia",
+      "income_level": "Medio-alto a alto — dispuesto a pagar por experiencia y detalle, no por volumen",
+      "interests": ["Viajes auténticos", "Diseño e interiorismo", "Café de especialidad", "Fotografía", "Bienestar y calma"],
+      "pain_points": ["Experiencias turísticas genéricas o masificadas", "Alojamientos sin personalidad ni cuidado real", "Desconfianza en plataformas sin curaduría"],
+      "aspirations": ["Desconectar sin perder elegancia", "Conocer la Colombia real, no la del cliché", "Sentirse cuidado, no gestionado"]
+    }
+  },
+  "brand_personality": {
+    "archetype": "Gobernante (Ruler)",
+    "archetype_secondary": "Cuidador (Caregiver)",
+    "human_traits": ["Sobrio", "Servicial", "Contemplativo", "Perfeccionista", "Introspectivo"],
+    "values": ["Servicio", "Autenticidad", "Excelencia con propósito"],
+    "emotions_to_generate": ["Calma", "Confianza", "Pertenencia silenciosa", "Asombro discreto"],
+    "brand_voice": {
+      "tone": ["Sereno", "Cercano con reserva", "Preciso", "Poético cuando la ocasión lo permite"],
+      "communication_style": "Frases cortas y pausadas. Nunca vende — invita.",
+      "words_to_use": ["silencio", "detalle", "origen", "calma", "esencia"],
+      "words_to_avoid": ["increíble oferta", "el mejor del mercado", "no te lo puedes perder", "viral", "garantizado"]
+    }
+  },
+  "non_negotiables": [
+    "Cero narco-morbo, drogas o cualquier cosa que ensucie la imagen de Colombia",
+    "Nunca sacrificar la calidad o el detalle por velocidad",
+    "Nunca comunicar su fe de forma forzada o predicada — solo auténtica",
+    "Nunca sonar corporativo genérico o a 'motivador de internet'"
+  ],
+  "visual_identity": {
+    "style": "Luxury minimalista · Japandi · Wabi-Sabi · Yugen",
+    "keywords": ["silencio", "sobriedad", "calma", "materialidad natural", "espacio negativo"],
+    "design_principles": [
+      "Un elemento protagonista por composición",
+      "El espacio vacío es parte del diseño, no un descuido",
+      "La imperfección natural (Wabi-Sabi) sobre la perfección sintética",
+      "Colores mudos, nunca brillantes"
+    ],
+    "visual_feelings": ["Calma", "Elegancia sin esfuerzo", "Pertenencia a un lugar cuidado"]
+  },
+  "logo": {
+    "concept": "Wordmark en Cormorant Garamond con letter-spacing amplio y una línea horizontal fina debajo — evoca el horizonte y la quietud.",
+    "symbolism": "La línea horizontal: el horizonte, la quietud, el viaje sin prisa",
+    "type": "Logotipo (wordmark)",
+    "usage_notes": [
+      "No usar sobre fondos con imágenes",
+      "Mantener el letter-spacing amplio siempre",
+      "Versión monograma 'BL' solo para foto de perfil/redes"
+    ]
+  },
+  "colors": {
+    "primary": { "name": "Carbón cálido", "hex": "#1C1A18", "meaning": "Sobriedad, elegancia, la base del silencio visual" },
+    "secondary": [ { "name": "Musgo apagado", "hex": "#5C6653", "meaning": "Naturaleza, calma, Wabi-Sabi" } ],
+    "neutral_colors": [
+      { "name": "Lino cálido", "hex": "#EDE7DD", "usage": "Fondos de lectura, espacios en blanco" },
+      { "name": "Negro tinta", "hex": "#100F0E", "usage": "Texto sobre fondos claros" }
+    ],
+    "accent_colors": [ { "name": "Arena bronce", "hex": "#A9825C", "usage": "CTAs y detalles — dorado mate, nunca brillante" } ],
+    "proportions": "60% carbón · 30% musgo y lino · 10% arena bronce",
+    "combinations": {
+      "approved": [
+        { "fg": "#EDE7DD", "bg": "#1C1A18", "usage": "Texto principal sobre fondo oscuro dominante" },
+        { "fg": "#100F0E", "bg": "#EDE7DD", "usage": "Bloques de lectura larga" },
+        { "fg": "#A9825C", "bg": "#1C1A18", "usage": "CTAs y detalles grandes" }
+      ],
+      "prohibited": [
+        { "fg": "#A9825C", "bg": "#EDE7DD", "reason": "Bajo contraste, el detalle se pierde" },
+        { "fg": "#5C6653", "bg": "#1C1A18", "reason": "Contraste insuficiente para texto de lectura" }
+      ]
+    },
+    "gradients": []
+  },
+  "collections": [],
+  "typography": {
+    "primary": { "font_name": "Cormorant Garamond", "usage": "Títulos H1–H3, Bold, letter-spacing amplio", "weights": ["500", "600", "700"], "personality": ["elegante", "autoridad refinada", "editorial"] },
+    "secondary": { "font_name": "Jost", "usage": "Párrafos 16–18px, line-height 1.7", "weights": ["300", "400", "500"], "personality": ["moderna", "espaciada", "calma"] },
+    "hierarchy": { "h1": "Cormorant Garamond Bold 48–64px", "h2": "Cormorant Garamond SemiBold 28–36px", "body": "Jost Regular 16–18px / line-height 1.7", "caption": "Jost Light 13–14px, letter-spacing amplio" }
+  },
+  "photography": {
+    "style": "Luz natural y suave, casi siempre golden hour o luz difusa de interior. Encuadres amplios con mucho espacio negativo.",
+    "subjects": ["Arquitectura e interiores", "Paisaje y montaña", "Detalles de producto (café)", "Rutas en moto"],
+    "lighting": "Golden hour o luz difusa — nunca luz dura de mediodía",
+    "composition": "Espacio negativo generoso, simetría silenciosa, un solo punto focal",
+    "editing_style": "Desaturado y cálido, contraste bajo-medio, grano sutil bienvenido",
+    "color_treatment": "Tonos tierra y carbón — nunca HDR ni saturación forzada",
+    "avoid": ["Multitudes", "Colores saturados o neón", "Poses forzadas o sonrisas de stock"]
+  },
+  "keyvisual": {
+    "post_types": [
+      { "name": "Silencio visual", "composition": "Foto de arquitectura o paisaje a pantalla completa, sin texto o con una sola palabra en Cormorant Garamond" },
+      { "name": "Bloque carbón", "composition": "Fondo carbón sólido, tipografía display grande en lino, para frases o anuncios de marca" },
+      { "name": "Editorial de viaje", "composition": "Foto + label vertical rotado 90° (RUTA / ORIGEN / DETALLE), estilo revista" }
+    ],
+    "support_elements": ["Línea horizontal fina como firma visual recurrente", "Marco delgado color arena en fotos de producto"],
+    "content_labels": ["RUTA", "ORIGEN", "DETALLE", "PROCESO"],
+    "instagram_grid": "Alternancia 2:1 — dos fotos de atmósfera por cada bloque de color o texto; nunca dos bloques de color seguidos"
+  },
+  "content_strategy": {
+    "main_topics": ["Viajes en moto por Colombia", "Pueblos y montañas de Antioquia", "Fotografía de viaje y arquitectura", "Reflexiones de fe y propósito", "Detrás de cámaras de sus 4 marcas", "Café de origen colombiano"],
+    "content_pillars": ["Viaje y territorio", "Hospitalidad y detalle", "Café y origen", "Fe y propósito (sutil)", "Proceso creativo (fotografía + IA)"],
+    "customer_journey": {
+      "awareness": ["Contenido de viaje en moto e Instagram cinematográfico"],
+      "consideration": ["Portafolio de marcas y fotografía en la web personal"],
+      "decision": ["Contacto directo por WhatsApp con respuesta cercana"],
+      "loyalty": ["Historias reales de huéspedes y clientes, nunca testimonios genéricos"]
+    }
+  },
+  "social_media": {
+    "instagram_style": "Cinematográfico, poético, hook en la primera línea, cierre emocional, 10 hashtags con SEO natural",
+    "facebook_style": "Uso mínimo — solo cross-post de Instagram si aplica",
+    "linkedin_style": "Reflexivo y profesional, ángulo de emprendimiento y fotografía comercial",
+    "tiktok_style": "Hook directo en 3–4 líneas, ritmo pausado (nunca caótico), 5 hashtags",
+    "youtube_style": ""
+  },
+  "messaging": {
+    "elevator_pitch": "Construyo viajes, alojamientos, café y fotografía que muestran la Colombia buena — con la calma de quien prefiere hacerlo bien antes que hacerlo rápido.",
+    "value_proposition": "Bayron Londoño conecta viaje, hospitalidad, café y fotografía en un ecosistema colombiano — construido con la calma de quien no necesita gritar para que lo elijan bien.",
+    "unique_selling_points": [
+      "Un solo fundador sostiene 4 marcas con la misma mirada estética y el mismo estándar de detalle",
+      "Fotografía propia, no banco de imágenes",
+      "Propósito de servicio genuino, no discurso de marketing"
+    ],
+    "brand_promises": ["El detalle siempre está cuidado, aunque tome más tiempo", "Nunca vas a sentir que te venden — vas a sentir que te atienden"],
+    "key_messages": ["Lo mejor no necesita ruido", "El silencio también es una forma de servir", "Colombia, mostrada como es"],
+    "whatsapp_greeting": "Hola, soy Bayron Londoño 👋 Cuéntame qué buscas — viajar, hospedarte, un café con historia, o fotografía y web — y te oriento con calma."
+  },
+  "customer_experience": {
+    "desired_feelings": ["Calma", "Confianza", "Cuidado genuino"],
+    "service_style": "Atento y pausado — cercanía con reserva, nunca efusiva",
+    "customer_relationship": "Selectiva y directa: se autodirige según la marca o servicio que necesite, siempre atendido por Bayron o su equipo con el mismo estándar",
+    "experience_keywords": ["Silencio", "Detalle", "Autenticidad", "Calma"]
+  },
+  "competitors": {
+    "direct_competitors": [],
+    "indirect_competitors": ["Influencers de viaje genéricos", "Marcas corporativas de turismo sin fundador visible"],
+    "differentiators": [
+      "Un solo fundador sostiene 4 marcas con la misma mirada estética y el mismo estándar de detalle",
+      "Fotografía propia, no banco de imágenes",
+      "Propósito de servicio genuino, no discurso de marketing"
+    ]
+  },
+  "brand_keywords": ["Colombia turismo", "pueblos de Antioquia", "viaje en moto Colombia", "fotografía de viaje Colombia", "turismo experiencial Colombia", "hospitalidad boutique Medellín", "lujo silencioso", "Japandi Wabi-Sabi"],
+  "applications": {
+    "business_card": "Frente: carbón + wordmark centrado. Reverso: lino + contacto en Jost. Canva Pro → Canva Print.",
+    "letterhead": "Header: wordmark + línea arena. Footer: tagline en itálica. Canva Pro.",
+    "email_signature": "Nombre en Cormorant Garamond + cargo + redes, línea fina arena como separador. Canva Pro.",
+    "video_call_background": "Fondo carbón liso, wordmark pequeño en esquina inferior derecha. Canva Pro → Google Meet.",
+    "social_profile": "Wordmark sobre fondo carbón con margen limpio. Bio = propuesta de valor comprimida. Canva Pro.",
+    "billboard": "Una sola foto + wordmark — nunca más de una idea por valla. Canva Pro.",
+    "merchandising": "Si aplica a futuro: colores mate únicamente, nunca estampados brillantes ni logos grandes"
+  },
+  "web": {
+    "ui_style": "29 Exaggerated Minimalism",
+    "ui_style_note": "Uno de los 67 estilos del brand-to-web skill (reference/11)",
+    "layout_hint": "Hero de una sola imagen a pantalla completa, tipografía display enorme, navegación mínima, mucho whitespace, scroll lento y pausado",
+    "effects_hint": ["Fade-in suave al hacer scroll", "Parallax sutil en hero (máx. 1 capa)", "Transiciones lentas (600–800ms), nunca abruptas"],
+    "background_hex": "#1C1A18",
+    "text_hex": "#EDE7DD",
+    "pages": ["Inicio", "Sobre mí", "Portafolio de marcas", "Fotografía", "Servicios de IA / Desarrollo Web", "Contacto"],
+    "cta_primary": "Que en segundos entienda qué hace y sea dirigido a la marca o servicio correspondiente",
+    "anti_patterns": ["Pop-ups agresivos", "Múltiples CTAs compitiendo", "Autoplay de video con sonido", "Iconografía genérica de 'influencer de viajes'"]
+  },
+  "ai_guidelines": {
+    "image_generation_prompt": "Minimalist editorial photography, warm charcoal black and muted sand tones, soft natural light, wide negative space, Japandi and wabi-sabi aesthetic, quiet luxury, architectural or landscape subject, no people posing, subtle film grain, desaturated warm color grade",
+    "copywriting_prompt": "Escribe con calma y precisión. Frases cortas, sin urgencia ni superlativos genéricos. El silencio y el espacio en blanco comunican tanto como las palabras. Nunca sonar a influencer ni a corporativo. La fe y el propósito de servicio pueden asomar, nunca predicarse.",
+    "design_prompt": "Diseño minimalista de lujo silencioso: fondos carbón (#1C1A18) o lino (#EDE7DD), un solo elemento protagonista por sección, tipografía Cormorant Garamond en grande para headlines, Jost espaciada para texto. Cero gradientes brillantes, cero iconografía genérica.",
+    "forbidden_elements": ["Gradientes brillantes o neón", "Iconografía genérica de viajes (aviones, maletas, sombrillas)", "Emojis en exceso", "Cualquier referencia a narcotráfico o 'Colombia peligrosa'", "Dorado brillante o metálico"],
+    "required_elements": ["Espacio negativo generoso", "Fotografía propia de arquitectura, paisaje o producto", "Tipografía Cormorant Garamond en titulares", "Paleta carbón + musgo + arena bronce"]
+  }
+};
+</script>
+<style>
+:root{
+  --primary:#1B3A2D; --secondary:#7A9E7E; --accent:#C4622D;
+  --bg:#F8F6F2; --ink:#1A1A1A; --soft:#77716A; --card:#FFFFFF;
+  --font-display:'Georgia',serif; --font-body:'Helvetica Neue',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.15}
+section{padding:88px 0;border-bottom:1px solid rgba(0,0,0,.07)}
+.num{font-family:var(--font-body);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:14px}
+h2{font-size:clamp(28px,4vw,44px);margin-bottom:36px}
+h3{font-size:19px;margin:34px 0 12px;color:var(--primary)}
+p{max-width:680px;color:var(--ink)}
+.soft{color:var(--soft);font-size:15px}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border-radius:14px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.tag{display:inline-block;padding:6px 14px;border-radius:99px;font-size:13px;margin:4px 6px 4px 0;background:var(--card);border:1px solid rgba(0,0,0,.1)}
+.tag.no{border-color:transparent;background:rgba(0,0,0,.05);color:var(--soft);text-decoration:line-through}
+/* HERO */
+#hero{min-height:78vh;display:flex;align-items:center;background:var(--primary);color:#fff;border:none}
+#hero .inner{padding:120px 0}
+#hero .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.65;margin-bottom:22px}
+#hero h1{font-size:clamp(48px,9vw,110px);color:#fff}
+#hero .tagline{font-size:clamp(17px,2.4vw,24px);opacity:.85;margin-top:18px;font-style:italic;max-width:640px}
+#hero .meta{margin-top:56px;font-size:13px;opacity:.55;letter-spacing:.08em}
+/* COLOR */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.sw{border-radius:14px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;cursor:pointer;transition:transform .25s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.sw:hover{transform:translateY(-4px)}
+.sw b{font-size:15px}
+.sw span{font-size:13px;opacity:.85;font-family:monospace}
+.sw small{font-size:11.5px;opacity:.7;margin-top:4px}
+.combo{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;margin-bottom:10px;background:var(--card)}
+.combo .chip{width:46px;height:30px;border-radius:6px;border:1px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+.combo.bad{opacity:.7}
+.combo.bad .chip{filter:grayscale(.4)}
+/* TIPOGRAFÍA */
+.type-card .big{font-size:clamp(40px,6vw,72px);line-height:1.05;margin:8px 0 14px;font-weight:600}
+.type-card .alpha{font-size:17px;letter-spacing:.04em;color:var(--soft);word-break:break-all}
+/* VOZ */
+.voice-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+blockquote{border-left:4px solid var(--accent);padding:6px 0 6px 20px;font-family:var(--font-display);font-size:20px;font-style:italic;color:var(--primary);margin:18px 0;max-width:640px}
+/* KEYVISUAL / APPS / LISTAS */
+.kv .card b{color:var(--primary)}
+ul.clean{list-style:none}
+ul.clean li{padding:9px 0;border-bottom:1px dashed rgba(0,0,0,.09);font-size:15px}
+ul.clean li b{color:var(--primary)}
+/* FOOTER */
+footer{padding:56px 0;text-align:center;font-size:12.5px;color:var(--soft);letter-spacing:.05em}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#fff;padding:10px 22px;border-radius:99px;font-size:13px;transition:transform .3s;z-index:99}
+.toast.on{transform:translateX(-50%) translateY(0)}
+@media(max-width:640px){section{padding:60px 0}.wrap{padding:0 20px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast">HEX copiado</div>
+<script>
+(function(){
+  const B = BRAND;
+  if(!B || !B.brand){ document.getElementById('app').innerHTML='<div class="wrap" style="padding:80px 0"><h2>Sin datos de marca</h2><p class="soft">Reemplaza el objeto BRAND con el JSON de la marca.</p></div>'; return; }
+
+  // ---- Helpers ----
+  const esc = s => String(s??'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const lum = hex => { const h=(hex||'').replace('#',''); if(h.length<6) return 0;
+    const r=parseInt(h.substr(0,2),16),g=parseInt(h.substr(2,2),16),b=parseInt(h.substr(4,2),16);
+    return (0.299*r+0.587*g+0.114*b)/255; };
+  const inkOn = hex => lum(hex)>0.6 ? '#1A1A1A' : '#FFFFFF';
+  const list = (arr,cls='') => (arr||[]).filter(Boolean).map(x=>`<span class="tag ${cls}">${esc(x)}</span>`).join('');
+  const li = (arr,fmt) => (arr||[]).map(fmt).join('');
+
+  // ---- CSS vars desde la marca ----
+  const c = B.colors||{};
+  const R = document.documentElement.style;
+  if(c.primary?.hex) R.setProperty('--primary', c.primary.hex);
+  if(c.secondary?.[0]?.hex) R.setProperty('--secondary', c.secondary[0].hex);
+  if(c.accent_colors?.[0]?.hex) R.setProperty('--accent', c.accent_colors[0].hex);
+  const neutrals=c.neutral_colors||[];
+  const bgN=neutrals.find(n=>lum(n.hex)>0.85), inkN=neutrals.find(n=>lum(n.hex)<0.3);
+  if(bgN) R.setProperty('--bg', bgN.hex);
+  if(inkN) R.setProperty('--ink', inkN.hex);
+
+  // ---- Google Fonts dinámico ----
+  const ty=B.typography||{};
+  const fonts=[ty.primary?.font_name, ty.secondary?.font_name].filter(Boolean);
+  if(fonts.length){
+    const link=document.createElement('link'); link.rel='stylesheet';
+    link.href='https://fonts.googleapis.com/css2?'+fonts.map(f=>'family='+f.trim().replace(/ /g,'+')+':wght@300;400;600;700').join('&')+'&display=swap';
+    document.head.appendChild(link);
+    if(ty.primary?.font_name) R.setProperty('--font-display', `'${ty.primary.font_name}', serif`);
+    if(ty.secondary?.font_name) R.setProperty('--font-body', `'${ty.secondary.font_name}', sans-serif`);
+  }
+  document.title = `Manual de Marca — ${B.brand.name||''}`;
+
+  // ---- Swatches: todos los colores ----
+  const allColors=[];
+  if(c.primary?.hex) allColors.push({...c.primary, rol:'Primario'});
+  (c.secondary||[]).forEach(x=>x.hex&&allColors.push({...x, rol:'Secundario'}));
+  (c.accent_colors||[]).forEach(x=>x.hex&&allColors.push({...x, rol:'Acento'}));
+  (c.neutral_colors||[]).forEach(x=>x.hex&&allColors.push({...x, rol:'Neutro'}));
+  const swatches = allColors.map(x=>`
+    <div class="sw" style="background:${esc(x.hex)};color:${inkOn(x.hex)}" data-hex="${esc(x.hex)}">
+      <b>${esc(x.name||x.rol)}</b><span>${esc(x.hex)}</span>
+      <small>${esc(x.rol)}${x.meaning?' — '+esc(x.meaning):(x.usage?' — '+esc(x.usage):'')}</small>
+    </div>`).join('');
+
+  const combos = (arr,bad)=> (arr||[]).map(x=>`
+    <div class="combo ${bad?'bad':''}">
+      <div class="chip" style="background:${esc(x.bg)};color:${esc(x.fg)}">Aa</div>
+      <div style="font-size:14px">${bad?'✕ ':''}<code>${esc(x.fg)}</code> sobre <code>${esc(x.bg)}</code>
+      <span class="soft"> — ${esc(bad?x.reason:x.usage)}</span></div>
+    </div>`).join('');
+
+  const collections = (B.collections||[]).filter(x=>x.name).map(x=>`
+    <div class="card"><b style="color:var(--primary)">${esc(x.name)}</b>
+      <p class="soft" style="margin:6px 0 12px">${esc(x.concept)}</p>
+      <div style="display:flex;gap:8px">${(x.palette||[]).map(p=>`<div class="sw" style="background:${esc(p.hex)};color:${inkOn(p.hex)};min-height:64px;flex:1;padding:8px" data-hex="${esc(p.hex)}"><span>${esc(p.hex)}</span></div>`).join('')}</div>
+    </div>`).join('');
+
+  const bp=B.brand_personality||{}, voice=bp.brand_voice||{};
+  const kv=B.keyvisual||{}, ph=B.photography||{}, msg=B.messaging||{}, apps=B.applications||{}, web=B.web||{}, lg=B.logo||{};
+  const appEntries=Object.entries(apps).filter(([k,v])=>v);
+  const appNames={business_card:'Tarjeta de presentación',letterhead:'Membrete',email_signature:'Firma de email',video_call_background:'Fondo de videollamada',social_profile:'Perfil de redes',billboard:'Valla / OOH',merchandising:'Merchandising'};
+
+  // ---- Render ----
+  document.getElementById('app').innerHTML = `
+  <section id="hero"><div class="wrap inner">
+    <div class="k">Manual de Identidad de Marca</div>
+    <h1>${esc(B.brand.name)}</h1>
+    <div class="tagline">${esc(B.brand.tagline)}</div>
+    <div class="meta">${esc(B.brand.industry)} · v${esc(B.meta?.version||'1.0')} · ${esc(B.meta?.generated_date||'')} · Documento interno</div>
+  </div></section>
+
+  <section><div class="wrap">
+    <span class="num">01 · Esencia</span><h2>La marca</h2>
+    <p>${esc(B.brand.purpose||B.brand.mission)}</p>
+    ${msg.value_proposition?`<blockquote>${esc(msg.value_proposition)}</blockquote>`:''}
+    <div class="grid g2" style="margin-top:28px">
+      <div class="card"><h3 style="margin-top:0">Cliente ideal</h3><p class="soft">${esc(B.brand.target_market)}</p></div>
+      <div class="card"><h3 style="margin-top:0">Arquetipo</h3><p><b>${esc(bp.archetype)}</b>${bp.archetype_secondary?` · secundario: ${esc(bp.archetype_secondary)}`:''}</p>
+      <div style="margin-top:10px">${list(bp.human_traits)}</div></div>
+    </div>
+    ${(B.non_negotiables||[]).length?`<h3>No negociables</h3><ul class="clean">${li(B.non_negotiables,x=>`<li>${esc(x)}</li>`)}</ul>`:''}
+  </div></section>
+
+  <section><div class="wrap">
+    <span class="num">02 · Voz</span><h2>Cómo hablamos</h2>
+    <p class="soft">${esc(voice.communication_style)}</p>
+    <div style="margin:16px 0 8px">${list(voice.tone)}</div>
+    <div class="voice-cols" style="margin-top:24px">
+      <div class="card"><h3 style="margin-top:0">Decimos</h3>${list(voice.words_to_use)}</div>
+      <div class="card"><h3 style="margin-top:0">Nunca decimos</h3>${list(voice.words_to_avoid,'no')}</div>
+    </div>
+    ${msg.whatsapp_greeting?`<h3>Saludo WhatsApp</h3><blockquote>${esc(msg.whatsapp_greeting)}</blockquote>`:''}
+  </div></section>
+
+  <section><div class="wrap">
+    <span class="num">03 · Color</span><h2>Paleta</h2>
+    <p class="soft" style="margin-bottom:24px">Clic en cualquier color para copiar el HEX. Proporción: <b>${esc(c.proportions)}</b></p>
+    <div class="swatches">${swatches}</div>
+    ${(c.combinations?.approved||[]).length?`<h3>Combinaciones aprobadas</h3>${combos(c.combinations.approved,false)}`:''}
+    ${(c.combinations?.prohibited||[]).length?`<h3>Combinaciones prohibidas</h3>${combos(c.combinations.prohibited,true)}`:''}
+    ${collections?`<h3>Colecciones con paleta propia</h3><div class="grid g2">${collections}</div>`:''}
+  </div></section>
+
+  <section><div class="wrap">
+    <span class="num">04 · Tipografía</span><h2>Sistema tipográfico</h2>
+    <div class="grid g2">
+      <div class="card type-card">
+        <span class="soft">Display · ${esc(ty.primary?.usage)}</span>
+        <div class="big" style="font-family:var(--font-display)">${esc(ty.primary?.font_name)}</div>
+        <div class="alpha" style="font-family:var(--font-display)">AaBbCcDdEeFfGg 0123456789</div>
+      </div>
+      <div class="card type-card">
+        <span class="soft">Body · ${esc(ty.secondary?.usage)}</span>
+        <div class="big" style="font-family:var(--font-body)">${esc(ty.secondary?.font_name)}</div>
+        <div class="alpha" style="font-family:var(--font-body)">AaBbCcDdEeFfGg 0123456789</div>
+      </div>
+    </div>
+    ${ty.hierarchy?`<ul class="clean" style="margin-top:22px">
+      ${li(Object.entries(ty.hierarchy).filter(([k,v])=>v),([k,v])=>`<li><b>${k.toUpperCase()}</b> — ${esc(v)}</li>`)}</ul>`:''}
+  </div></section>
+
+  <section><div class="wrap">
+    <span class="num">05 · Logo</span><h2>Dirección de logo</h2>
+    <div class="grid g2">
+      <div class="card"><h3 style="margin-top:0">Concepto</h3><p class="soft">${esc(lg.concept)}</p>
+        ${lg.symbolism?`<p class="soft" style="margin-top:10px"><b>Simbolismo:</b> ${esc(lg.symbolism)}</p>`:''}</div>
+      <div class="card"><h3 style="margin-top:0">Reglas de uso</h3>
+        <ul class="clean">${li(lg.usage_notes,x=>`<li>${esc(x)}</li>`)}</ul></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <span class="num">06 · Fotografía</span><h2>Estilo fotográfico</h2>
+    <ul class="clean">
+      ${ph.style?`<li><b>Estilo</b> — ${esc(ph.style)}</li>`:''}
+      ${ph.lighting?`<li><b>Luz</b> — ${esc(ph.lighting)}</li>`:''}
+      ${ph.composition?`<li><b>Composición</b> — ${esc(ph.composition)}</li>`:''}
+      ${ph.editing_style?`<li><b>Edición</b> — ${esc(ph.editing_style)}</li>`:''}
+      ${ph.color_treatment?`<li><b>Tratamiento de color</b> — ${esc(ph.color_treatment)}</li>`:''}
+      ${(ph.avoid||[]).length?`<li><b>Evitar</b> — ${esc((ph.avoid||[]).join(' · '))}</li>`:''}
+    </ul>
+    ${(ph.subjects||[]).length?`<div style="margin-top:16px">${list(ph.subjects)}</div>`:''}
+  </div></section>
+
+  <section class="kv"><div class="wrap">
+    <span class="num">07 · Keyvisual</span><h2>La marca en acción</h2>
+    <div class="grid g3">
+      ${li(kv.post_types,x=>`<div class="card"><b>${esc(x.name)}</b><p class="soft" style="margin-top:8px;font-size:14px">${esc(x.composition)}</p></div>`)}
+    </div>
+    ${(kv.support_elements||[]).length?`<h3>Elementos de apoyo</h3><div>${list(kv.support_elements)}</div>`:''}
+    ${kv.instagram_grid?`<h3>Grid de Instagram</h3><p class="soft">${esc(kv.instagram_grid)}</p>`:''}
+  </div></section>
+
+  <section><div class="wrap">
+    <span class="num">08 · Aplicaciones</span><h2>Touchpoints</h2>
+    <ul class="clean">${li(appEntries,([k,v])=>`<li><b>${esc(appNames[k]||k)}</b> — ${esc(v)}</li>`)}</ul>
+  </div></section>
+
+  ${web.ui_style||web.cta_primary?`<section><div class="wrap">
+    <span class="num">09 · Web</span><h2>Especificación web</h2>
+    <ul class="clean">
+      ${web.ui_style?`<li><b>Estilo UI</b> — ${esc(web.ui_style)}</li>`:''}
+      ${web.layout_hint?`<li><b>Layout</b> — ${esc(web.layout_hint)}</li>`:''}
+      ${(web.effects_hint||[]).length?`<li><b>Efectos</b> — ${esc(web.effects_hint.join(' · '))}</li>`:''}
+      ${(web.pages||[]).length?`<li><b>Páginas</b> — ${esc(web.pages.join(' · '))}</li>`:''}
+      ${web.cta_primary?`<li><b>CTA principal</b> — ${esc(web.cta_primary)}</li>`:''}
+    </ul>
+  </div></section>`:''}
+
+  <footer>MANUAL INTERNO DE MARCA · ${esc(B.brand.name)} · No distribuir públicamente<br>
+  Generado con el branding skill · Compatible con brand-to-web</footer>`;
+
+  // ---- Copiar HEX ----
+  document.addEventListener('click', e=>{
+    const sw=e.target.closest('[data-hex]'); if(!sw) return;
+    const hex=sw.getAttribute('data-hex');
+    (navigator.clipboard?navigator.clipboard.writeText(hex):Promise.reject()).catch(()=>{
+      const ta=document.createElement('textarea'); ta.value=hex; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    });
+    const toast=document.getElementById('toast'); toast.textContent=hex+' copiado';
+    toast.classList.add('on'); setTimeout(()=>toast.classList.remove('on'),1400);
+  });
+})();
+</script>
+</body>
+</html>

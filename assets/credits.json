@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "src": "assets/img/hero.jpg",
+    "title": "el camino",
+    "creator": "medea_material",
+    "creator_url": "https://www.flickr.com/photos/18618970@N00",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/18618970@N00/3364495374",
+    "source": "flickr"
+  },
+  "foto-ruta": {
+    "src": "assets/img/foto-ruta.jpg",
+    "title": "Granite Mountains Natural Reserve, as Seen from Kelbaker Road",
+    "creator": "Ken Lund",
+    "creator_url": "https://www.flickr.com/photos/75683070@N00",
+    "license": "by-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/75683070@N00/8602446572",
+    "source": "flickr"
+  },
+  "foto-pueblo": {
+    "src": "assets/img/foto-pueblo.jpg",
+    "title": "Carrera 5.",
+    "creator": "young shanahan",
+    "creator_url": "https://www.flickr.com/photos/14759783@N04",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/14759783@N04/27534888339",
+    "source": "flickr"
+  },
+  "foto-origen": {
+    "src": "assets/img/foto-origen.jpg",
+    "title": "2009/365/8 Oatmeal as Experimentation",
+    "creator": "cogdogblog",
+    "creator_url": "https://www.flickr.com/photos/37996646802@N01",
+    "license": "cc0",
+    "license_version": "1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/37996646802@N01/3180105556",
+    "source": "flickr"
+  },
+  "foto-palmas": {
+    "src": "assets/img/foto-palmas.jpg",
+    "title": "Bienvenidos a Cocora",
+    "creator": "Andrés Castrillón García",
+    "creator_url": "https://commons.wikimedia.org/w/index.php?title=User:AndresCastrillon&action=edit&redlink=1",
+    "license": "by-sa",
+    "license_version": "4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=46391822",
+    "source": "wikimedia"
+  },
+  "foto-calle": {
+    "src": "assets/img/foto-calle.jpg",
+    "title": "Jardin, Colombia",
+    "creator": "szeke",
+    "creator_url": "https://www.flickr.com/photos/43355249@N00",
+    "license": "by-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/43355249@N00/24201908183",
+    "source": "flickr"
+  }
+}
