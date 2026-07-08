@@ -56,9 +56,9 @@
     });
   }
 
-  /* --- Reveals con IntersectionObserver + red de seguridad --- */
+  /* --- Reveals (fade + cortina) con IntersectionObserver + red de seguridad --- */
   function initReveals() {
-    var targets = $$(".reveal, .rule");
+    var targets = $$(".reveal, .rule, .curtain");
     if (!targets.length) return;
 
     if (typeof IntersectionObserver === "undefined") {
@@ -79,12 +79,81 @@
 
     // Seguridad: a los 6s, revela lo que siga oculto dentro del viewport
     setTimeout(function () {
-      $$(".reveal:not(.is-visible), .rule:not(.is-visible)").forEach(function (el) {
+      $$(".reveal:not(.is-visible), .rule:not(.is-visible), .curtain:not(.is-visible)").forEach(function (el) {
         if (el.getBoundingClientRect().top < window.innerHeight) {
           el.classList.add("is-visible");
         }
       });
     }, 6000);
+  }
+
+  /* --- Pastilla "Ver" que sigue al cursor (solo desktop) --- */
+  function initViewPill() {
+    var pill = $("[data-view-pill]");
+    if (!pill || pill.dataset.bound) return;
+    if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    pill.dataset.bound = "1";
+
+    document.addEventListener("mousemove", function (e) {
+      pill.style.left = e.clientX + "px";
+      pill.style.top = e.clientY + "px";
+    }, { passive: true });
+
+    $$("[data-view]").forEach(function (el) {
+      el.addEventListener("mouseover", function (e) {
+        if (!el.contains(e.relatedTarget)) pill.classList.add("is-on");
+      });
+      el.addEventListener("mouseout", function (e) {
+        if (!el.contains(e.relatedTarget)) pill.classList.remove("is-on");
+      });
+    });
+  }
+
+  /* --- Lightbox minimalista con <dialog> --- */
+  function initLightbox() {
+    var dialog = $("[data-lightbox]");
+    if (!dialog || dialog.dataset.bound) return;
+    dialog.dataset.bound = "1";
+    var img = $("img", dialog);
+    var pill = $("[data-view-pill]");
+
+    document.addEventListener("click", function (e) {
+      var item = e.target.closest("[data-lightbox-item]");
+      if (!item) return;
+      e.preventDefault();
+      var src = item.getAttribute("href");
+      var alt = $("img", item) ? $("img", item).alt : "";
+      img.src = src;
+      img.alt = alt;
+      if (pill) pill.classList.remove("is-on");
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else window.open(src, "_blank");
+    });
+
+    var close = $("[data-lightbox-close]", dialog);
+    if (close) close.addEventListener("click", function () { dialog.close(); });
+    dialog.addEventListener("click", function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+
+  /* --- "Ver más": revela los elementos ocultos de una galería --- */
+  function initVerMas() {
+    $$("[data-more]").forEach(function (btn) {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = "1";
+      btn.addEventListener("click", function () {
+        var grid = document.querySelector(btn.getAttribute("data-more"));
+        if (!grid) return;
+        $$(".is-hidden", grid).forEach(function (item) {
+          item.classList.remove("is-hidden");
+          item.classList.add("is-visible");
+          var c = $(".curtain", item);
+          if (c) c.classList.add("is-visible");
+        });
+        btn.parentElement.style.display = "none";
+      });
+    });
   }
 
   /* --- Parallax sutil en hero (1 capa, GSAP) --- */
@@ -136,6 +205,9 @@
     safe(initSmoothAnchors, "initSmoothAnchors");
     safe(initReveals, "initReveals");
     safe(initHeroParallax, "initHeroParallax");
+    safe(initViewPill, "initViewPill");
+    safe(initLightbox, "initLightbox");
+    safe(initVerMas, "initVerMas");
     safe(initContact, "initContact");
     safe(initYear, "initYear");
     document.documentElement.classList.add("is-ready");

@@ -64,5 +64,104 @@
     "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
     "foreign_landing_url": "https://www.flickr.com/photos/43355249@N00/24201908183",
     "source": "flickr"
+  },
+  "foto-arq-1": {
+    "src": "assets/img/foto-arq-1.jpg",
+    "title": "Angular bars",
+    "creator": "mac_ivan",
+    "creator_url": "https://www.flickr.com/photos/25100842@N08",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/25100842@N08/7178172305",
+    "source": "flickr"
+  },
+  "foto-arq-2": {
+    "src": "assets/img/foto-arq-2.jpg",
+    "title": "faith",
+    "creator": "Robert Couse-Baker",
+    "creator_url": "https://www.flickr.com/photos/29233640@N07",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/29233640@N07/17063796297",
+    "source": "flickr"
+  },
+  "foto-int-1": {
+    "src": "assets/img/foto-int-1.jpg",
+    "title": "Living room decor, interior of Housing Commission dwelling, Stafford - Brisbane",
+    "creator": "Queensland State Archives",
+    "creator_url": "https://www.flickr.com/photos/60455048@N02",
+    "license": "pdm",
+    "license_version": "1.0",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/60455048@N02/39953744591",
+    "source": "flickr"
+  },
+  "foto-int-2": {
+    "src": "assets/img/foto-int-2.jpg",
+    "title": "Cozy interior of a bedroom with a double bed, linen, and natural light in a serene home setting",
+    "creator": "nenadstojkovicart",
+    "creator_url": "https://www.flickr.com/photos/202846129@N03",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/202846129@N03/54584134746",
+    "source": "flickr"
+  },
+  "foto-hosp-1": {
+    "src": "assets/img/foto-hosp-1.jpg",
+    "title": "Hôtel Château Cran Chaud Chicoutimi - Suite avec lit King",
+    "creator": "Simonvezinatremblay",
+    "creator_url": "https://commons.wikimedia.org/w/index.php?title=User:Simonvezinatremblay&action=edit&redlink=1",
+    "license": "cc0",
+    "license_version": "1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+    "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=182164619",
+    "source": "wikimedia"
+  },
+  "foto-hosp-2": {
+    "src": "assets/img/foto-hosp-2.jpg",
+    "title": "Grand Canyon Lodge North Rim 0299",
+    "creator": "Grand Canyon NPS",
+    "creator_url": "https://www.flickr.com/photos/50693818@N08",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/50693818@N08/5572281514",
+    "source": "flickr"
+  },
+  "foto-pm-1": {
+    "src": "assets/img/foto-pm-1.jpg",
+    "title": "Ukraine, Sevastopol, Севастополь - База отдыха подводников КЧФ РФ WMID2241268",
+    "creator": "polupasha",
+    "creator_url": "https://wikimapia.org/#show=/user/1179553",
+    "license": "by-sa",
+    "license_version": "3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=181618962",
+    "source": "wikimedia"
+  },
+  "cafe-herramientas": {
+    "src": "assets/img/cafe-herramientas.jpg",
+    "title": "a cup of lemon tea",
+    "creator": "argyadiptya",
+    "creator_url": "https://www.flickr.com/photos/51912656@N02",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/51912656@N02/9026817650",
+    "source": "flickr"
+  },
+  "cafe-granos": {
+    "src": "assets/img/cafe-granos.jpg",
+    "title": "Colombia - Coffee Triangle 030 - coffee plantation tour",
+    "creator": "mckaysavage",
+    "creator_url": "https://www.flickr.com/photos/56796376@N00",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/56796376@N00/8806304640",
+    "source": "flickr"
   }
 }
