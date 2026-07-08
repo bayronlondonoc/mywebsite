@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20260708b">
+  <link rel="stylesheet" href="styles.css?v=20260708c">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-vereda">
@@ -23,10 +23,10 @@
     <span></span><span></span>
   </button>
   <nav class="nav-links" data-nav-links aria-label="Navegación principal">
-    <a href="index.html#que-hago">Lo que hago</a>
     <a href="fotografia.html">Fotografía</a>
     <a href="ia.html">IA</a>
     <a href="raices.html">Raíces</a>
+    <a href="raices-pm.html">Property Management</a>
     <a href="vereda.html">Vereda</a>
     <a href="index.html#contacto" class="nav-cta">Contacto</a>
   </nav>
@@ -57,29 +57,45 @@
     </div>
   </section>
 
-  <!-- ORIGEN / HISTORIA -->
+  <!-- HISTORIA don José + Willys -->
   <section class="vr-section vr-section--arena" id="origen">
     <div class="wrap">
       <div class="vr-story">
         <div class="reveal">
+          <span class="vr-award"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg> Tercer puesto · Mejores cafés de Colombia</span>
           <p class="vr-eyebrow">La historia</p>
-          <h2>De don José<br>a tu mesa.</h2>
+          <h2>De un Jeep Willys<br>a tu mesa.</h2>
           <p class="vr-lead">En 1998, don José vendió su Jeep Willys y compró una finca cerca de Sevilla, Valle, para sembrar café. Hoy su familia sostiene ese legado, y Vereda lo comparte: un café de origen a 1.750 msnm que acompaña conversaciones, en bolsas que narran los territorios de Colombia.</p>
           <div class="vr-sello">Café de origen · Sevilla, Valle</div>
         </div>
         <figure class="vr-story-media curtain reveal">
-          <img class="curtain-img" src="assets/img/cafe-granos.jpg" alt="Granos de café tostados de la finca" loading="lazy" decoding="async">
+          <img class="curtain-img" src="assets/img/vr-willys.webp" alt="Jeep Willys en una finca del paisaje cultural cafetero" loading="lazy" decoding="async">
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- FICHA EN SENSACIONES -->
+  <!-- GALERÍA del grano a la taza -->
   <section class="vr-section vr-section--palma">
+    <div class="wrap">
+      <p class="vr-eyebrow reveal">Del grano a la taza</p>
+      <h2 class="reveal">El origen, a la vista.</h2>
+      <div class="vr-galeria">
+        <figure class="vr-g vr-g-8 curtain reveal"><img class="curtain-img" src="assets/img/vr-finca.webp" alt="Montañas y palmas del origen cafetero" loading="lazy" decoding="async"></figure>
+        <figure class="vr-g vr-g-4 curtain reveal"><img class="curtain-img" src="assets/img/vr-manos.webp" alt="Manos sosteniendo café tostado" loading="lazy" decoding="async"></figure>
+        <figure class="vr-g vr-g-4 curtain reveal"><img class="curtain-img" src="assets/img/foto-origen.jpg" alt="Grano secándose al sol" loading="lazy" decoding="async"></figure>
+        <figure class="vr-g vr-g-4 curtain reveal"><img class="curtain-img" src="assets/img/cafe-granos.jpg" alt="Café recién tostado en lote pequeño" loading="lazy" decoding="async"></figure>
+        <figure class="vr-g vr-g-4 curtain reveal"><img class="curtain-img" src="assets/img/cafe-herramientas.jpg" alt="Herramientas del oficio del café" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FICHA EN SENSACIONES -->
+  <section class="vr-section vr-section--arena">
     <div class="wrap">
       <p class="vr-eyebrow reveal">El café</p>
       <h2 class="reveal">Una taza para<br>sentarse a conversar.</h2>
-      <p class="vr-lead reveal" style="opacity:.9">Variedad Castillo, proceso lavado suave. Lote galardonado con el tercer puesto entre los mejores cafés de Colombia.</p>
+      <p class="vr-lead reveal">Variedad Castillo, proceso lavado suave. Cultivado a 1.750 msnm y tostado en lotes pequeños.</p>
       <div class="vr-ficha">
         <div class="vr-nota reveal"><div class="k">Tostión</div><div class="v">Media</div><div class="d">Equilibrio entre dulzor y cuerpo.</div></div>
         <div class="vr-nota reveal"><div class="k">Acidez</div><div class="v">Cítrica suave</div><div class="d">Brillante, nunca agresiva.</div></div>
@@ -90,7 +106,7 @@
   </section>
 
   <!-- PROCESO -->
-  <section class="vr-section vr-section--arena">
+  <section class="vr-section vr-section--palma">
     <div class="wrap">
       <p class="vr-eyebrow reveal">El proceso</p>
       <h2 class="reveal">Del grano a la pausa.</h2>
@@ -103,14 +119,24 @@
   </section>
 
   <!-- COLECCIONES -->
-  <section class="vr-section vr-section--palma">
+  <section class="vr-section vr-section--arena">
     <div class="wrap">
       <p class="vr-eyebrow reveal">Las colecciones</p>
       <h2 class="reveal">Cada bolsa,<br>un territorio.</h2>
-      <div class="servicios" style="margin-top:52px">
-        <div class="servicio reveal" style="border-top-color:rgba(239,231,218,.3)"><h3 style="color:var(--vr-panela)">Vereda · Raíz</h3><p style="opacity:.9">La línea permanente: el café que sostiene las conversaciones importantes.</p></div>
-        <div class="servicio reveal" style="border-top-color:rgba(239,231,218,.3)"><h3 style="color:var(--vr-panela)">Vereda · Origen</h3><p style="opacity:.9">Lotes limitados y numerados: un origen que se descubre, con dorado suave.</p></div>
-        <div class="servicio reveal" style="border-top-color:rgba(239,231,218,.3)"><h3 style="color:var(--vr-panela)">Colección Sevilla</h3><p style="opacity:.9">La primera del sistema Territorio, que honra la finca de don José.</p></div>
+      <p class="vr-lead reveal">Coleccionables que narran Colombia. Cada línea tiene su propia paleta, derivada del mismo origen.</p>
+      <div class="vr-colecciones">
+        <article class="vr-col reveal">
+          <div class="vr-col-swatch"><i style="background:#2E4B3A"></i><i style="background:#EFE7DA"></i><i style="background:#C88A4B"></i></div>
+          <div class="vr-col-body"><h3>Vereda · Raíz</h3><p>La línea permanente: el café que sostiene las conversaciones importantes.</p></div>
+        </article>
+        <article class="vr-col reveal">
+          <div class="vr-col-swatch"><i style="background:#1F1D1A"></i><i style="background:#6B4A35"></i><i style="background:#C9A227"></i></div>
+          <div class="vr-col-body"><h3>Vereda · Origen</h3><p>Lotes limitados y numerados: un origen que se descubre, con dorado suave.</p></div>
+        </article>
+        <article class="vr-col reveal">
+          <div class="vr-col-swatch"><i style="background:#4A6B4F"></i><i style="background:#A6423A"></i><i style="background:#EFE7DA"></i></div>
+          <div class="vr-col-body"><h3>Colección Sevilla</h3><p>La primera del sistema Territorio, que honra la finca de don José.</p></div>
+        </article>
       </div>
     </div>
   </section>
@@ -135,7 +161,7 @@
     <p class="footer-brand">Bayron Londoño</p>
     <p class="footer-tagline"><em>La elegancia de servir en silencio.</em></p>
     <p class="footer-meta">
-      <a href="fotografia.html">Fotografía</a><span class="footer-sep">·</span><a href="ia.html">IA</a><span class="footer-sep">·</span><a href="raices.html">Raíces</a><span class="footer-sep">·</span><a href="raices.html#operacion">Property Management</a><span class="footer-sep">·</span><a href="vereda.html">Vereda</a>
+      <a href="fotografia.html">Fotografía</a><span class="footer-sep">·</span><a href="ia.html">IA</a><span class="footer-sep">·</span><a href="raices.html">Raíces</a><span class="footer-sep">·</span><a href="raices-pm.html">Property Management</a><span class="footer-sep">·</span><a href="vereda.html">Vereda</a>
     </p>
     <p class="footer-meta">
       © <span data-year>2026</span> Bayron Londoño · Antioquia, Colombia
@@ -149,7 +175,7 @@
 
 <script defer src="lib/gsap.min.js"></script>
 <script defer src="lib/ScrollTrigger.min.js"></script>
-<script defer src="lib/manifest.js?v=20260708b"></script>
-<script defer src="main.js?v=20260708b"></script>
+<script defer src="lib/manifest.js?v=20260708c"></script>
+<script defer src="main.js?v=20260708c"></script>
 </body>
 </html>

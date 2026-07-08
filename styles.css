@@ -415,18 +415,21 @@ body.page-foto { background: var(--carbon); color: var(--lino); }
 html.js .museo-hero .rule:not(.is-visible) { transform: scaleX(0); }
 .museo-hero .filosofia { margin: 0 auto; text-align: center; }
 
-/* Una obra por fila, mucho aire, marco fino */
-.obra { padding: clamp(60px, 10vw, 150px) 0; }
-.obra-frame { position: relative; margin: 0 auto; max-width: 940px; overflow: hidden; }
-.obra-frame::after { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(237,231,221,0.28); z-index: 3; pointer-events: none; }
-.obra-frame img { width: 100%; height: auto; object-fit: cover; filter: saturate(0.7) sepia(0.06) contrast(1.03); }
-.obra--tall .obra-frame { max-width: 620px; }
-.obra-cap { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; max-width: 940px; margin: 22px auto 0; }
-.obra--tall .obra-cap { max-width: 620px; }
-.obra-cap .t { font-family: var(--font-display); font-size: clamp(20px, 2.4vw, 30px); }
-.obra-cap .n { font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase; opacity: 0.5; white-space: nowrap; }
-.museo-sep { text-align: center; padding: clamp(40px, 6vw, 80px) 0 0; }
-.museo-sep span { font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--arena); }
+/* Galería tipo museo: piezas moderadas, enmarcadas, bien organizadas */
+.museo-cat { padding: clamp(52px, 7vw, 104px) 0; }
+.museo-cat-head { text-align: center; margin-bottom: clamp(30px, 4vw, 56px); }
+.museo-cat-head .k { font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--arena); display: block; margin-bottom: 12px; }
+.museo-cat-head h2 { font-size: clamp(26px, 3.4vw, 42px); margin: 0 auto; }
+.museo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 66px); max-width: 880px; margin: 0 auto; }
+.obra { margin: 0; }
+.obra-frame { position: relative; display: block; overflow: hidden; aspect-ratio: 4 / 5; }
+.obra-frame::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(237,231,221,0.30); z-index: 3; pointer-events: none; }
+.obra-frame img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.7) sepia(0.06) contrast(1.03); }
+.obra--wide { grid-column: 1 / -1; }
+.obra--wide .obra-frame { aspect-ratio: 16 / 9; }
+.obra-cap { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: 16px; }
+.obra-cap .t { font-family: var(--font-display); font-size: clamp(17px, 1.9vw, 23px); }
+.obra-cap .n { font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.5; white-space: nowrap; }
 
 /* -------------------------------------------------------------
    17. IA — portafolio tecnológico
@@ -626,6 +629,25 @@ body.page-vereda .nav.is-solid { background: rgba(250,247,241,0.92); border-bott
 body.page-vereda .footer { background: var(--vr-palma); color: var(--vr-blanco); }
 body.page-vereda .quote { background: var(--vr-tierra); }
 
+/* Vereda — galería, colecciones y sello de premio */
+.vr-award { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 22px; padding: 11px 20px; border: 1px solid var(--vr-panela); border-radius: 999px; color: var(--vr-panela); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; }
+.vr-award svg { width: 16px; height: 16px; flex: none; }
+.vr-galeria { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(12px, 1.8vw, 22px); margin-top: 52px; }
+.vr-g { position: relative; overflow: hidden; border-radius: 4px; display: block; }
+.vr-g img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.3s var(--ease-out); }
+.vr-g:hover img { transform: scale(1.05); }
+.vr-g-6 { grid-column: span 6; aspect-ratio: 16 / 11; }
+.vr-g-4 { grid-column: span 4; aspect-ratio: 4 / 5; }
+.vr-g-8 { grid-column: span 8; aspect-ratio: 16 / 10; }
+.vr-colecciones { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 34px); margin-top: 52px; }
+.vr-col { border-radius: 8px; overflow: hidden; background: var(--vr-blanco); color: var(--vr-tinta); border: 1px solid rgba(31,29,26,0.1); transition: transform var(--slow) var(--ease-out); }
+.vr-col:hover { transform: translateY(-6px); }
+.vr-col-swatch { display: flex; height: 84px; }
+.vr-col-swatch i { flex: 1; display: block; }
+.vr-col-body { padding: 24px 24px 28px; }
+.vr-col-body h3 { color: var(--vr-palma); font-size: 25px; }
+.vr-col-body p { font-size: 14.5px; opacity: 0.8; margin-top: 8px; }
+
 /* -------------------------------------------------------------
    20. Responsive
    ------------------------------------------------------------- */
@@ -637,6 +659,8 @@ body.page-vereda .quote { background: var(--vr-tierra); }
   .rc-pm-pillars { grid-template-columns: 1fr; }
   .vr-ficha { grid-template-columns: repeat(2, 1fr); }
   .vr-pasos { grid-template-columns: 1fr; }
+  .vr-colecciones { grid-template-columns: 1fr; }
+  .vr-g-6, .vr-g-4, .vr-g-8 { grid-column: span 6; }
   .servicios { grid-template-columns: 1fr; gap: 34px; }
 }
 @media (max-width: 959px) {
@@ -644,20 +668,25 @@ body.page-vereda .quote { background: var(--vr-tierra); }
   .servicio-row { grid-template-columns: 64px 1fr; }
   .fortaleza { grid-template-columns: 52px 1fr; }
 }
-@media (max-width: 719px) {
-  body { font-size: 16px; }
+/* Menú hamburguesa hasta 1099px — el nav completo (6 ítems) solo en desktop ancho */
+@media (max-width: 1099px) {
   .nav-toggle { display: flex; }
   .nav-links {
     position: fixed; inset: 0; z-index: 101;
     flex-direction: column; justify-content: center; gap: 30px;
-    background: color-mix(in srgb, var(--bg) 97%, #000); font-size: 15px;
+    background: color-mix(in srgb, var(--bg) 97%, #000); font-size: 16px;
     opacity: 0; pointer-events: none; transition: opacity 0.6s var(--ease-out);
   }
   .nav-links.is-open { opacity: 1; pointer-events: auto; }
   .nav.menu-open .nav-toggle span:first-child { transform: translateY(4px) rotate(45deg); }
   .nav.menu-open .nav-toggle span:last-child { transform: translateY(-4px) rotate(-45deg); }
+}
 
+@media (max-width: 719px) {
+  body { font-size: 16px; }
   .hero-media { inset: 0; }
+  .museo-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .obra--wide { grid-column: 1 / -1; }
   .band { min-height: auto; padding: clamp(60px, 14vw, 90px) 0; }
   .band-tag { display: none; }
   .band-vr-figure img { max-height: 380px; }
