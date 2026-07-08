@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vereda — Café de origen · Bayron Londoño</title>
-  <meta name="description" content="Vereda, café colombiano de origen. Cultivado despacio, tostado con intención — de la montaña a tu taza, con la historia a la vista.">
+  <title>Vereda — Café de origen · Sevilla, Valle · Bayron Londoño</title>
+  <meta name="description" content="Vereda: café colombiano de origen de una finca cerca de Sevilla, Valle. Bolsas de colección que narran un territorio. El origen se honra compartiéndolo.">
   <link rel="canonical" href="https://bayronlondono.com/vereda">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/img/vereda-bolsa.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20260708">
+  <link rel="stylesheet" href="styles.css?v=20260708b">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-vereda">
@@ -32,81 +33,99 @@
 </header>
 
 <main>
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="kicker reveal" style="color: var(--arena); opacity: 1;">Vereda · Café de origen</p>
-      <h1 class="reveal">Un café con vereda propia.</h1>
-      <span class="rule reveal" aria-hidden="true"></span>
-      <p class="filosofia reveal">Café colombiano de origen, cultivado despacio y tostado con intención. De la montaña a tu taza, con la historia a la vista.</p>
+  <!-- HERO -->
+  <section class="vr-hero">
+    <svg class="vr-botanic" viewBox="0 0 500 700" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+      <path d="M250 700 C250 560 190 500 130 450 C70 400 60 320 100 250" stroke="currentColor" stroke-width="1.4"/>
+      <g stroke="currentColor" stroke-width="1.1">
+        <path d="M170 480 q-52 -22 -70 -66 q46 -8 70 34"/>
+        <path d="M150 420 q-48 -28 -54 -78 q44 6 62 52"/>
+        <path d="M130 360 q-44 -26 -46 -72 q40 6 56 48"/>
+      </g>
+      <g fill="currentColor" opacity="0.7">
+        <circle cx="205" cy="512" r="7"/><circle cx="224" cy="528" r="7"/><circle cx="196" cy="560" r="6"/>
+      </g>
+    </svg>
+    <div class="vr-hero-copy">
+      <p class="kicker reveal">Vereda · Café de origen</p>
+      <h1 class="reveal">El origen se honra <em>compartiéndolo</em>.</h1>
+      <p class="vr-sub reveal">Café colombiano de una finca cerca de Sevilla, Valle del Cauca. Hecho para la pausa y la conversación.</p>
+      <p class="reveal" style="margin-top:38px"><a class="btn btn-panela btn-pill" href="#pedir">Quiero una bolsa</a></p>
+    </div>
+    <div class="vr-hero-figure reveal">
+      <img src="assets/img/vereda-bolsa.jpg" alt="Bolsa de café Vereda Origen con ilustración botánica y colibrí" fetchpriority="high" decoding="async">
     </div>
   </section>
 
-  <section class="section section-carbon" id="origen" style="padding-top: 0;">
+  <!-- ORIGEN / HISTORIA -->
+  <section class="vr-section vr-section--arena" id="origen">
     <div class="wrap">
-      <ul class="servicios-lista">
-        <li class="servicio-row reveal">
-          <span class="servicio-row-num">01</span>
-          <div>
-            <h3>Origen</h3>
-            <p>Montaña antioqueña, altura y paciencia. El café viene de veredas donde el cultivo todavía es un oficio de familia.</p>
-          </div>
-        </li>
-        <li class="servicio-row reveal">
-          <span class="servicio-row-num">02</span>
-          <div>
-            <h3>Proceso</h3>
-            <p>Secado al sol y tueste medio, en lotes pequeños. Cada etapa a la vista — porque el origen no se presume, se muestra.</p>
-          </div>
-        </li>
-        <li class="servicio-row reveal">
-          <span class="servicio-row-num">03</span>
-          <div>
-            <h3>Taza</h3>
-            <p>Dulzura serena, cuerpo redondo y un final largo. Un café para conversar despacio, no para tomar de afán.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section section-lino">
-    <div class="wrap">
-      <p class="num reveal">La materia</p>
-      <h2 class="reveal">Del grano<br><em>a la taza.</em></h2>
-      <span class="rule reveal" aria-hidden="true"></span>
-      <div class="galeria-cat">
-        <a class="g-item g-w reveal" href="assets/img/cafe-granos.jpg" data-view data-lightbox-item>
-          <figure class="curtain"><img src="assets/img/cafe-granos.jpg" alt="Granos de café recién tostados" loading="lazy" decoding="async"></figure>
-          <figcaption>Tueste · Lote pequeño</figcaption>
-        </a>
-        <a class="g-item g-n reveal" href="assets/img/foto-origen.jpg" data-view data-lightbox-item>
-          <figure class="curtain"><img src="assets/img/foto-origen.jpg" alt="Grano secándose al sol" loading="lazy" decoding="async"></figure>
-          <figcaption>Secado · Al sol</figcaption>
-        </a>
-        <a class="g-item g-n reveal" href="assets/img/cafe-herramientas.jpg" data-view data-lightbox-item>
-          <figure class="curtain"><img src="assets/img/cafe-herramientas.jpg" alt="Herramientas de barista sobre madera" loading="lazy" decoding="async"></figure>
-          <figcaption>Barra · El oficio</figcaption>
-        </a>
-        <a class="g-item g-w reveal" href="assets/img/foto-palmas.jpg" data-view data-lightbox-item>
-          <figure class="curtain"><img src="assets/img/foto-palmas.jpg" alt="Montaña entre la niebla" loading="lazy" decoding="async"></figure>
-          <figcaption>Montaña · Donde nace</figcaption>
-        </a>
+      <div class="vr-story">
+        <div class="reveal">
+          <p class="vr-eyebrow">La historia</p>
+          <h2>De don José<br>a tu mesa.</h2>
+          <p class="vr-lead">En 1998, don José vendió su Jeep Willys y compró una finca cerca de Sevilla, Valle, para sembrar café. Hoy su familia sostiene ese legado, y Vereda lo comparte: un café de origen a 1.750 msnm que acompaña conversaciones, en bolsas que narran los territorios de Colombia.</p>
+          <div class="vr-sello">Café de origen · Sevilla, Valle</div>
+        </div>
+        <figure class="vr-story-media curtain reveal">
+          <img class="curtain-img" src="assets/img/cafe-granos.jpg" alt="Granos de café tostados de la finca" loading="lazy" decoding="async">
+        </figure>
       </div>
     </div>
   </section>
 
+  <!-- FICHA EN SENSACIONES -->
+  <section class="vr-section vr-section--palma">
+    <div class="wrap">
+      <p class="vr-eyebrow reveal">El café</p>
+      <h2 class="reveal">Una taza para<br>sentarse a conversar.</h2>
+      <p class="vr-lead reveal" style="opacity:.9">Variedad Castillo, proceso lavado suave. Lote galardonado con el tercer puesto entre los mejores cafés de Colombia.</p>
+      <div class="vr-ficha">
+        <div class="vr-nota reveal"><div class="k">Tostión</div><div class="v">Media</div><div class="d">Equilibrio entre dulzor y cuerpo.</div></div>
+        <div class="vr-nota reveal"><div class="k">Acidez</div><div class="v">Cítrica suave</div><div class="d">Brillante, nunca agresiva.</div></div>
+        <div class="vr-nota reveal"><div class="k">Cuerpo</div><div class="v">Medio</div><div class="d">Redondo y persistente.</div></div>
+        <div class="vr-nota reveal"><div class="k">Notas</div><div class="v">Chocolate</div><div class="d">Cacao profundo y frutos secos.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="vr-section vr-section--arena">
+    <div class="wrap">
+      <p class="vr-eyebrow reveal">El proceso</p>
+      <h2 class="reveal">Del grano a la pausa.</h2>
+      <div class="vr-pasos">
+        <div class="vr-paso reveal"><div class="n">01</div><h3>Cosecha</h3><p>Recolección selectiva del grano maduro, a mano, en la ladera de la finca.</p></div>
+        <div class="vr-paso reveal"><div class="n">02</div><h3>Tostión</h3><p>Tostado propio en lotes pequeños, para cuidar el perfil de cada cosecha.</p></div>
+        <div class="vr-paso reveal"><div class="n">03</div><h3>Encuentro</h3><p>La bolsa llega a tu mesa lista para servir, y para acompañar la conversación.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLECCIONES -->
+  <section class="vr-section vr-section--palma">
+    <div class="wrap">
+      <p class="vr-eyebrow reveal">Las colecciones</p>
+      <h2 class="reveal">Cada bolsa,<br>un territorio.</h2>
+      <div class="servicios" style="margin-top:52px">
+        <div class="servicio reveal" style="border-top-color:rgba(239,231,218,.3)"><h3 style="color:var(--vr-panela)">Vereda · Raíz</h3><p style="opacity:.9">La línea permanente: el café que sostiene las conversaciones importantes.</p></div>
+        <div class="servicio reveal" style="border-top-color:rgba(239,231,218,.3)"><h3 style="color:var(--vr-panela)">Vereda · Origen</h3><p style="opacity:.9">Lotes limitados y numerados: un origen que se descubre, con dorado suave.</p></div>
+        <div class="servicio reveal" style="border-top-color:rgba(239,231,218,.3)"><h3 style="color:var(--vr-panela)">Colección Sevilla</h3><p style="opacity:.9">La primera del sistema Territorio, que honra la finca de don José.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASE -->
   <section class="quote" aria-label="Frase de Vereda">
-    <div class="wrap">
-      <p class="quote-text reveal">El origen no se inventa. <em>Se cultiva.</em></p>
-    </div>
+    <div class="wrap"><p class="quote-text reveal">Donde el café se vuelve <em>encuentro</em>.</p></div>
   </section>
 
-  <section class="section-carbon">
-    <div class="page-cta" style="border-top: 0;">
-      <div class="wrap wrap-narrow">
-        <h2 class="reveal">¿Quieres probar<br><em>Vereda?</em></h2>
-        <a class="btn btn-arena reveal" href="index.html#contacto">Escríbeme</a>
-      </div>
+  <!-- PEDIR -->
+  <section class="page-cta" id="pedir">
+    <div class="wrap wrap-narrow">
+      <h2 class="reveal" style="color:var(--vr-palma)">Llévate Colombia<br><em>a tu mesa.</em></h2>
+      <p class="reveal" style="margin:0 auto 34px;max-width:48ch">Bolsa de 340 g, en grano o molido. Para ti, para regalar, o para tu hotel o espacio.</p>
+      <a class="btn btn-panela btn-pill reveal" data-whatsapp href="index.html#contacto">Pedir por WhatsApp</a>
     </div>
   </section>
 </main>
@@ -116,7 +135,7 @@
     <p class="footer-brand">Bayron Londoño</p>
     <p class="footer-tagline"><em>La elegancia de servir en silencio.</em></p>
     <p class="footer-meta">
-      <a href="fotografia.html">Fotografía</a><span class="footer-sep">·</span><a href="ia.html">IA</a><span class="footer-sep">·</span><a href="raices.html">Raíces</a><span class="footer-sep">·</span><a href="raices-pm.html">Raíces PM</a><span class="footer-sep">·</span><a href="vereda.html">Vereda</a>
+      <a href="fotografia.html">Fotografía</a><span class="footer-sep">·</span><a href="ia.html">IA</a><span class="footer-sep">·</span><a href="raices.html">Raíces</a><span class="footer-sep">·</span><a href="raices.html#operacion">Property Management</a><span class="footer-sep">·</span><a href="vereda.html">Vereda</a>
     </p>
     <p class="footer-meta">
       © <span data-year>2026</span> Bayron Londoño · Antioquia, Colombia
@@ -127,14 +146,10 @@
 </footer>
 
 <div class="view-pill" data-view-pill aria-hidden="true">Ver</div>
-<dialog class="lightbox" data-lightbox>
-  <button class="lightbox-close" data-lightbox-close>Cerrar</button>
-  <img src="" alt="">
-</dialog>
 
 <script defer src="lib/gsap.min.js"></script>
 <script defer src="lib/ScrollTrigger.min.js"></script>
-<script defer src="lib/manifest.js?v=20260708"></script>
-<script defer src="main.js?v=20260708"></script>
+<script defer src="lib/manifest.js?v=20260708b"></script>
+<script defer src="main.js?v=20260708b"></script>
 </body>
 </html>

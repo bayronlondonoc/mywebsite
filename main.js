@@ -156,6 +156,66 @@
     });
   }
 
+  /* --- Malla de nodos (constelación IA) sobre canvas[data-mesh] --- */
+  function initNodeMesh() {
+    $$("[data-mesh]").forEach(function (canvas) {
+      if (canvas.dataset.bound) return;
+      canvas.dataset.bound = "1";
+      var ctx = canvas.getContext && canvas.getContext("2d");
+      if (!ctx) return;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = 0, h = 0, nodes = [], raf = 0;
+      var CYAN = "111,230,206";
+
+      function build() {
+        var r = canvas.getBoundingClientRect();
+        w = r.width; h = r.height;
+        if (w < 2 || h < 2) return;
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        var count = Math.max(16, Math.min(48, Math.round((w * h) / 17000)));
+        nodes = [];
+        for (var i = 0; i < count; i++) {
+          nodes.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22 });
+        }
+      }
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        var i, j;
+        for (i = 0; i < nodes.length; i++) {
+          var n = nodes[i];
+          if (!reduced) { n.x += n.vx; n.y += n.vy; }
+          if (n.x < 0 || n.x > w) n.vx *= -1;
+          if (n.y < 0 || n.y > h) n.vy *= -1;
+        }
+        for (i = 0; i < nodes.length; i++) {
+          for (j = i + 1; j < nodes.length; j++) {
+            var a = nodes[i], b = nodes[j];
+            var dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 135) {
+              ctx.strokeStyle = "rgba(" + CYAN + "," + (0.18 * (1 - d / 135)).toFixed(3) + ")";
+              ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+            }
+          }
+        }
+        ctx.fillStyle = "rgba(" + CYAN + ",0.65)";
+        for (i = 0; i < nodes.length; i++) {
+          ctx.beginPath(); ctx.arc(nodes[i].x, nodes[i].y, 1.5, 0, Math.PI * 2); ctx.fill();
+        }
+        if (!reduced) raf = requestAnimationFrame(draw);
+      }
+      build();
+      draw();
+      var rt;
+      window.addEventListener("resize", function () {
+        clearTimeout(rt);
+        rt = setTimeout(function () { if (raf) cancelAnimationFrame(raf); build(); draw(); }, 200);
+      });
+    });
+  }
+
   /* --- Parallax sutil en hero (1 capa, GSAP) --- */
   function initHeroParallax() {
     var media = $("[data-hero-media]");
@@ -208,6 +268,7 @@
     safe(initViewPill, "initViewPill");
     safe(initLightbox, "initLightbox");
     safe(initVerMas, "initVerMas");
+    safe(initNodeMesh, "initNodeMesh");
     safe(initContact, "initContact");
     safe(initYear, "initYear");
     document.documentElement.classList.add("is-ready");
