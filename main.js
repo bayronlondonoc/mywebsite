@@ -233,16 +233,17 @@
     });
   }
 
-  /* --- Contacto: WhatsApp e Instagram solo si hay dato --- */
+  /* --- WhatsApp: cada botón puede llevar su propio mensaje (data-wa-msg) --- */
   function initContact() {
     var c = data.contact || {};
-    var wa = $("[data-whatsapp]");
-    if (wa && c.whatsapp) {
-      var text = encodeURIComponent(c.whatsappGreeting || "");
-      wa.href = "https://wa.me/" + c.whatsapp + (text ? "?text=" + text : "");
-      wa.target = "_blank";
-      wa.rel = "noopener";
-      wa.hidden = false;
+    if (c.whatsapp) {
+      $$("[data-whatsapp]").forEach(function (wa) {
+        var msg = wa.getAttribute("data-wa-msg") || c.whatsappGreeting || "";
+        wa.href = "https://wa.me/" + c.whatsapp + (msg ? "?text=" + encodeURIComponent(msg) : "");
+        wa.target = "_blank";
+        wa.rel = "noopener";
+        wa.hidden = false;
+      });
     }
     var ig = $("[data-instagram]");
     if (ig && c.instagram) {
