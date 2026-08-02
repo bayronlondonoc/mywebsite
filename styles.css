@@ -763,12 +763,19 @@ body.page-vereda .quote { background: var(--vr-tierra); }
   overflow: clip; isolation: isolate;
 }
 .pf-hero-bg { position: absolute; inset: -12% 0 -12% 0; z-index: 0; will-change: transform; }
-.pf-hero-bg img {
+/* Cinco fotos que se relevan cada 5 s con fundido cruzado y zoom lento.
+   Al salir, la escala se reinicia sin transición y ya invisible (0s con
+   retardo igual al fundido), para que no se vea el zoom en reversa. */
+.pf-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.6s var(--pf-soft); }
+.pf-slide.is-on { opacity: 1; }
+.pf-slide img {
   width: 100%; height: 100%; object-fit: cover;
-  transform: scale(1.08); animation: pf-ken 26s var(--pf-soft) infinite alternate;
+  transform: scale(1.05); transition: transform 0s 1.6s;
 }
-@keyframes pf-ken { from { transform: scale(1.08); } to { transform: scale(1.19); } }
-@media (prefers-reduced-motion: reduce) { .pf-hero-bg img { animation: none; } }
+.pf-slide.is-on img { transform: scale(1.13); transition: transform 6.6s linear; }
+@media (prefers-reduced-motion: reduce) {
+  .pf-slide img, .pf-slide.is-on img { transform: scale(1.05); transition: none; }
+}
 .pf-hero-scrim {
   position: absolute; inset: 0; z-index: 1;
   background:
@@ -895,23 +902,6 @@ a.pf-frame:hover > img { filter: brightness(1.06) saturate(1.05); }
   padding-left: clamp(20px, 3vw, 32px); max-width: 22ch;
 }
 
-/* ---------- Cifras ---------- */
-.pf-stats {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
-  background: var(--pf-linea); margin-top: clamp(52px, 7vw, 90px);
-}
-@media (min-width: 780px) { .pf-stats { grid-template-columns: repeat(4, 1fr); } }
-.pf-stat { background: var(--pf-noche); padding: clamp(26px, 3.4vw, 42px) clamp(18px, 2.4vw, 30px); }
-.pf-stat b {
-  display: block; font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(34px, 5vw, 58px); line-height: 1; color: var(--pf-arena);
-  font-variant-numeric: tabular-nums;
-}
-.pf-stat span {
-  display: block; margin-top: 14px; font-size: 11.5px; letter-spacing: 0.2em;
-  text-transform: uppercase; opacity: 0.6; line-height: 1.65;
-}
-
 /* ---------- Galería editorial ---------- */
 /* En celular una sola columna: la foto es el producto, no puede ir en miniatura. */
 .pf-gal { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(14px, 3vw, 22px); }
@@ -939,22 +929,6 @@ a.pf-frame:hover > img { filter: brightness(1.06) saturate(1.05); }
 }
 .pf-cap span { min-width: 0; }
 .pf-gal-note { margin-top: clamp(34px, 4vw, 54px); font-size: 13px; line-height: 1.75; opacity: 0.55; max-width: 78ch; }
-
-/* ---------- Qué incluye ---------- */
-.pf-list { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--pf-linea); }
-@media (min-width: 700px) { .pf-list { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1060px) { .pf-list { grid-template-columns: repeat(3, 1fr); } }
-.pf-item {
-  background: var(--pf-carbon); padding: clamp(30px, 3.4vw, 46px);
-  transition: background 0.6s var(--pf-soft), transform 0.6s var(--pf-soft);
-}
-.pf-item:hover { background: #221F1B; transform: translateY(-4px); }
-.pf-item i {
-  font-style: normal; font-family: var(--font-display); font-size: 13px;
-  letter-spacing: 0.24em; color: var(--pf-arena);
-}
-.pf-item h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(21px, 2.3vw, 27px); margin: 16px 0 12px; }
-.pf-item p { font-size: 15.5px; opacity: 0.74; line-height: 1.7; }
 
 /* ---------- Inversión ---------- */
 .pf-precio { position: relative; text-align: center; overflow: clip; }
@@ -999,6 +973,12 @@ a.pf-frame:hover > img { filter: brightness(1.06) saturate(1.05); }
 }
 .pf-card h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(23px, 3vw, 34px); margin-bottom: 14px; }
 .pf-card p { opacity: 0.8; max-width: 56ch; font-size: clamp(15.5px, 1.7vw, 17px); }
+.pf-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; list-style: none; padding: 0; }
+.pf-card-tags li {
+  border: 1px solid var(--pf-linea); border-radius: 999px; padding: 7px 16px;
+  font-size: 12px; letter-spacing: 0.06em; opacity: 0.72;
+}
+.pf-card-tags li:first-child { border-color: var(--pf-arena); color: var(--pf-arena); opacity: 1; }
 
 /* ---------- Condiciones ---------- */
 .pf-terms { max-width: 900px; }

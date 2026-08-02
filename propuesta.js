@@ -65,6 +65,30 @@
     }, 6000);
   }
 
+  /* --- Hero: cinco fotos que rotan cada 5 s --- */
+  function initSlides() {
+    var slides = $$(".pf-slide");
+    if (slides.length < 2) return;
+
+    // Las diapositivas 2..5 solo se descargan cuando el hero ya pintó.
+    function cargarResto() {
+      $$(".pf-slide img[data-src]").forEach(function (img) {
+        img.src = img.getAttribute("data-src");
+        img.removeAttribute("data-src");
+      });
+    }
+    if (document.readyState === "complete") setTimeout(cargarResto, 400);
+    else window.addEventListener("load", function () { setTimeout(cargarResto, 400); });
+
+    var i = 0;
+    setInterval(function () {
+      if (document.hidden) return;
+      slides[i].classList.remove("is-on");
+      i = (i + 1) % slides.length;
+      slides[i].classList.add("is-on");
+    }, 5000);
+  }
+
   /* --- Hero: fondo y contenido se mueven a distinta velocidad --- */
   function initHero() {
     if (!gsapOk) return;
@@ -180,6 +204,7 @@
   function boot() {
     if (gsapOk) { try { gsap.registerPlugin(ScrollTrigger); } catch (_) {} }
     safe(initSplit, "split");
+    safe(initSlides, "slides");
     safe(initHero, "hero");
     safe(initFrames, "frames");
     safe(initCapas, "capas");
