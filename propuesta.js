@@ -72,6 +72,10 @@
 
     // Las diapositivas 2..5 solo se descargan cuando el hero ya pintó.
     function cargarResto() {
+      $$(".pf-slide [data-srcset]").forEach(function (el) {
+        el.srcset = el.getAttribute("data-srcset");
+        el.removeAttribute("data-srcset");
+      });
       $$(".pf-slide img[data-src]").forEach(function (img) {
         img.src = img.getAttribute("data-src");
         img.removeAttribute("data-src");

@@ -768,11 +768,13 @@ body.page-vereda .quote { background: var(--vr-tierra); }
    retardo igual al fundido), para que no se vea el zoom en reversa. */
 .pf-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.6s var(--pf-soft); }
 .pf-slide.is-on { opacity: 1; }
+.pf-slide picture { display: block; position: absolute; inset: 0; }
 .pf-slide img {
   width: 100%; height: 100%; object-fit: cover;
-  transform: scale(1.05); transition: transform 0s 1.6s;
+  transform: scale(1.02); transition: transform 0s 1.6s;
 }
-.pf-slide.is-on img { transform: scale(1.13); transition: transform 6.6s linear; }
+/* Zoom contenido: por encima de 1.08 la foto se amplía tanto que se ve blanda. */
+.pf-slide.is-on img { transform: scale(1.08); transition: transform 6.6s linear; }
 @media (prefers-reduced-motion: reduce) {
   .pf-slide img, .pf-slide.is-on img { transform: scale(1.05); transition: none; }
 }
