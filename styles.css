@@ -913,7 +913,9 @@ a.pf-frame:hover > img { filter: brightness(1.06) saturate(1.05); }
 }
 
 /* ---------- Galería editorial ---------- */
-.pf-gal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 22px); }
+/* En celular una sola columna: la foto es el producto, no puede ir en miniatura. */
+.pf-gal { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(14px, 3vw, 22px); }
+@media (min-width: 620px) { .pf-gal { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 940px) { .pf-gal { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 26px); } }
 .pf-cell { grid-column: span 1; min-width: 0; }
 @media (min-width: 940px) {
