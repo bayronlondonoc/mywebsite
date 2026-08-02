@@ -8,6 +8,12 @@
       ]
     },
     {
+      "source": "/propuestafotografia",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
+      ]
+    },
+    {
       "source": "/(.*)\\.(js|css|json|html)",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache, must-revalidate" }

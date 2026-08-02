@@ -245,11 +245,17 @@
         wa.hidden = false;
       });
     }
-    var ig = $("[data-instagram]");
-    if (ig && c.instagram) {
-      ig.href = c.instagram;
+    // data-instagram vacío = perfil personal; data-instagram="raices" = marca.
+    var social = data.social || {};
+    $$("[data-instagram]").forEach(function (ig) {
+      var key = ig.getAttribute("data-instagram");
+      var url = key ? social[key] : c.instagram;
+      if (!url) return;
+      ig.href = url;
+      ig.target = "_blank";
+      ig.rel = "noopener";
       ig.hidden = false;
-    }
+    });
   }
 
   /* --- Año del footer --- */
