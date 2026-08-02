@@ -7,16 +7,20 @@
   <meta name="description" content="Fotografía profesional para alojamientos turísticos. Hasta 40 fotos editadas, drone según disponibilidad. $1.500.000 COP para casas o apartamentos de hasta 5 habitaciones.">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/propuesta/hero.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20260801">
+  <link rel="stylesheet" href="styles.css?v=20260802">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-propuesta">
 <a class="skip-link" href="#propuesta">Saltar al contenido</a>
 
-<header class="nav is-solid" data-nav>
+<div class="pf-progress" aria-hidden="true"></div>
+<div class="pf-grain" aria-hidden="true"></div>
+
+<header class="nav" data-nav>
   <a class="nav-brand" href="index.html">Bayron Londoño</a>
   <button class="nav-toggle" data-nav-toggle aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span>
@@ -32,125 +36,222 @@
 
 <main id="propuesta">
 
+  <!-- HERO -->
   <section class="pf-hero">
-    <div class="pf-hero-media">
-      <img src="assets/propuesta/hero.jpg" alt="Terraza de cabaña iluminada al anochecer con jacuzzi y luces cálidas" fetchpriority="high" decoding="async">
+    <div class="pf-hero-bg" aria-hidden="true">
+      <img src="assets/propuesta/hero.jpg" alt="" fetchpriority="high" decoding="async">
     </div>
+    <div class="pf-hero-scrim" aria-hidden="true"></div>
+
+    <figure class="pf-hero-float" data-depth="0.55" aria-hidden="true">
+      <img src="assets/propuesta/st-vista.jpg" alt="" loading="lazy" decoding="async">
+    </figure>
+
     <div class="pf-hero-inner">
       <div class="wrap">
-        <p class="pf-k reveal">Propuesta · Fotografía para alojamientos</p>
-        <h1 class="reveal">En Airbnb no compite tu casa.<br><em>Compite tu primera foto.</em></h1>
-        <p class="pf-hero-sub reveal">El huésped no recorre tu alojamiento: recorre una cuadrícula de miniaturas. Fotografío alojamientos turísticos desde adentro — administro los míos — y sé exactamente qué imagen hace que alguien se detenga, entre y reserve.</p>
+        <p class="pf-k">Propuesta · Fotografía para alojamientos</p>
+        <h1 class="pf-split">En Airbnb no compite tu casa.<br><em>Compite tu primera foto.</em></h1>
+        <p class="pf-hero-sub reveal">El huésped no recorre tu alojamiento: recorre una cuadrícula de miniaturas y decide en segundos cuál abre. Fotografío alojamientos desde adentro — administro los míos — y sé qué imagen hace que alguien se detenga, entre y reserve.</p>
         <div class="pf-hero-foot reveal">
           <p class="pf-hero-price"><span>Sesión completa</span>$1.500.000 COP</p>
-          <a class="btn btn-oro" data-whatsapp data-wa-msg="Hola Bayron, vi tu propuesta de fotografía para alojamientos y quiero agendar una sesión." href="#" hidden>Agendar por WhatsApp</a>
+          <a class="btn btn-oro" data-magnet data-whatsapp data-wa-msg="Hola Bayron, vi tu propuesta de fotografía para alojamientos y quiero agendar una sesión." href="#" hidden>Agendar por WhatsApp</a>
           <a class="btn btn-ghost" href="#galeria">Ver el trabajo</a>
         </div>
       </div>
     </div>
+
+    <div class="pf-scroll-cue" aria-hidden="true"><span>Desliza</span><i></i></div>
   </section>
 
-  <section class="pf-section">
+  <!-- MARQUESINA -->
+  <div class="pf-ticker" aria-hidden="true">
+    <div class="pf-ticker-track">
+      <span>Airbnb <b>✦</b> Booking <b>✦</b> Reserva directa <b>✦</b> Superhost <b>✦</b> Fincas y cabañas <b>✦</b> Apartamentos turísticos <b>✦</b> Antioquia <b>✦</b>&nbsp;</span>
+      <span>Airbnb <b>✦</b> Booking <b>✦</b> Reserva directa <b>✦</b> Superhost <b>✦</b> Fincas y cabañas <b>✦</b> Apartamentos turísticos <b>✦</b> Antioquia <b>✦</b>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ARGUMENTO -->
+  <section class="pf-section pf-section--noche">
     <div class="wrap">
-      <div class="pf-cols">
-        <div class="reveal">
-          <p class="pf-k">Por qué yo</p>
-          <h2 style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,4.2vw,50px);line-height:1.1;margin-bottom:22px">No vengo del estudio.<br>Vengo de <em style="font-style:italic;color:var(--arena)">la operación</em>.</h2>
-          <p>Administro alojamientos turísticos: reservas, huéspedes, reseñas y tarifas. Cada foto que tomo la juzgo con la misma pregunta que me hago con mis propias propiedades — <em>¿esta imagen hace que alguien pague más por una noche?</em></p>
-          <p>Por eso no fotografío habitaciones vacías: ambiento el espacio, ordeno la luz, cuido el detalle que le dice al huésped cómo se va a sentir ahí. Es la diferencia entre un catálogo y una razón para reservar.</p>
-          <p>Todo lo que ves abajo son alojamientos reales que fotografié y que hoy están publicados y recibiendo huéspedes.</p>
+      <div class="pf-narr">
+        <div class="pf-narr-fig">
+          <div class="pf-frame">
+            <img src="assets/propuesta/pre-terraza.jpg" alt="Terraza de cabaña con muebles en ratán y luces cálidas" loading="lazy" decoding="async">
+          </div>
+          <p class="pf-narr-cap">Casa Los Curazaos · Llanogrande</p>
         </div>
-        <div class="reveal">
-          <p class="pf-quote">No fotografío casas. Fotografío la razón por la que alguien decide quedarse en ellas.</p>
+
+        <div class="pf-narr-body">
+          <div>
+            <p class="pf-k">Por qué yo</p>
+            <h2 class="pf-h2 pf-split">No vengo del estudio.<br>Vengo de <em>la operación</em>.</h2>
+          </div>
+          <div class="reveal">
+            <p>Administro alojamientos turísticos: reservas, huéspedes, reseñas y tarifas. Cada foto que tomo la juzgo con la misma pregunta que me hago con mis propias propiedades — <em>¿esta imagen hace que alguien pague más por una noche?</em></p>
+            <p>Por eso no fotografío habitaciones vacías. Ambiento el espacio, ordeno la luz y cuido el detalle que le dice al huésped cómo se va a sentir ahí. Es la diferencia entre un catálogo y una razón para reservar.</p>
+          </div>
+          <p class="pf-quote reveal">Fotografío la razón por la que alguien decide quedarse.</p>
+          <div class="reveal">
+            <p>Trabajo con luz natural y ambiente real: nada de renders, nada de habitaciones que no existen. Lo que el huésped ve es lo que el huésped encuentra — y esa coherencia es la que sostiene las reseñas de cinco estrellas.</p>
+          </div>
         </div>
       </div>
 
       <div class="pf-stats">
-        <div class="pf-stat reveal"><b>40</b><span>Fotos editadas<br>por sesión</span></div>
-        <div class="pf-stat reveal"><b>5</b><span>Alojamientos propios<br>y administrados</span></div>
-        <div class="pf-stat reveal"><b>15</b><span>Días para la<br>primera entrega</span></div>
+        <div class="pf-stat reveal"><b data-count="40">40</b><span>Fotos editadas<br>por sesión</span></div>
+        <div class="pf-stat reveal"><b data-count="5">5</b><span>Alojamientos propios<br>y administrados</span></div>
+        <div class="pf-stat reveal"><b data-count="15">15</b><span>Días para la<br>primera entrega</span></div>
         <div class="pf-stat reveal"><b>50/50</b><span>Anticipo y saldo<br>el día de la sesión</span></div>
       </div>
     </div>
   </section>
 
-  <section class="pf-section pf-section--tinta" id="galeria">
+  <!-- GALERÍA -->
+  <section class="pf-section pf-section--claro" id="galeria">
     <div class="wrap">
-      <div class="pf-head reveal">
-        <p class="pf-k">Trabajo real</p>
-        <h2>Alojamientos que hoy<br><em>están recibiendo huéspedes.</em></h2>
-        <p>Casa Los Curazaos (Prestige, Luxe y Comfort), La Montaña 107 y un apartamento turístico. Todas las fotos son mías, sin montajes ni renders.</p>
+      <div class="pf-head">
+        <p class="pf-k">El trabajo</p>
+        <h2 class="pf-split">Espacios que se ven<br><em>como se sienten.</em></h2>
+        <p>Alojamientos que fotografié y que hoy están recibiendo huéspedes, junto a imágenes de referencia del estándar al que trabajo.</p>
       </div>
 
       <div class="pf-gal">
-        <a class="pf-shot pf-shot--wide curtain reveal" href="assets/propuesta/com-jacuzzi.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/com-jacuzzi.jpg" alt="Jacuzzi en deck de madera con luces colgantes al anochecer" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/pre-terraza.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/pre-terraza.jpg" alt="Terraza con muebles en ratán y luces cálidas" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/lux-hamaca.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/lux-hamaca.jpg" alt="Hamaca junto al jacuzzi rodeada de vegetación" loading="lazy" decoding="async">
-        </a>
+        <!-- 1 -->
+        <figure class="pf-cell pf-cell--wide">
+          <a class="pf-frame" href="assets/propuesta/st-piscina.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/st-piscina.jpg" alt="Piscina privada de una suite con jardín tropical" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Referencia</span><span>Exteriores</span></figcaption>
+        </figure>
+        <figure class="pf-cell pf-cell--drop">
+          <a class="pf-frame" href="assets/propuesta/lux-hamaca.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/lux-hamaca.jpg" alt="Hamaca junto al jacuzzi rodeada de vegetación" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Cabaña Luxe</span><span>01</span></figcaption>
+        </figure>
 
-        <a class="pf-shot curtain reveal" href="assets/propuesta/pre-cocina.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/pre-cocina.jpg" alt="Cocina con barra en madera y lámparas de fibra natural" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/lux-sala.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/lux-sala.jpg" alt="Sala con sofá claro y mesa de centro redonda" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/pre-habitacion.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/pre-habitacion.jpg" alt="Habitación en tonos lino con luz cálida de mesa de noche" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/com-habitacion.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/com-habitacion.jpg" alt="Habitación con dos camas dobles y ventanal al jardín" loading="lazy" decoding="async">
-        </a>
+        <!-- 2 -->
+        <figure class="pf-cell">
+          <a class="pf-frame" href="assets/propuesta/pre-terraza.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/pre-terraza.jpg" alt="Terraza con muebles en ratán y luces cálidas" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Cabaña Prestige</span><span>02</span></figcaption>
+        </figure>
+        <figure class="pf-cell pf-cell--wide">
+          <a class="pf-frame" href="assets/propuesta/st-lounge.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/st-lounge.jpg" alt="Sala de estar de un resort a la hora azul" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Referencia</span><span>Hora azul</span></figcaption>
+        </figure>
 
-        <a class="pf-shot pf-shot--wide curtain reveal" href="assets/propuesta/mon-jacuzzi.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/mon-jacuzzi.jpg" alt="Jacuzzi exterior con muro verde y pasillo de piedra" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/lux-habitacion.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/lux-habitacion.jpg" alt="Habitación con cabecero alto y obra gráfica en la pared" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/ped-habitacion.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/ped-habitacion.jpg" alt="Habitación de apartamento turístico con panelado en madera" loading="lazy" decoding="async">
-        </a>
+        <!-- 3 -->
+        <figure class="pf-cell pf-cell--tall">
+          <a class="pf-frame" href="assets/propuesta/st-vista.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/st-vista.jpg" alt="Vista al mar desde la cama de una suite" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Referencia</span><span>Vistas</span></figcaption>
+        </figure>
+        <figure class="pf-cell pf-cell--drop">
+          <a class="pf-frame" href="assets/propuesta/pre-habitacion.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/pre-habitacion.jpg" alt="Habitación en tonos lino con luz cálida de mesa de noche" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Cabaña Prestige</span><span>03</span></figcaption>
+        </figure>
+        <figure class="pf-cell pf-cell--tall">
+          <a class="pf-frame" href="assets/propuesta/st-bano.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/st-bano.jpg" alt="Baño con bañera exenta y ventanales al jardín" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Referencia</span><span>Baños</span></figcaption>
+        </figure>
 
-        <a class="pf-shot curtain reveal" href="assets/propuesta/ped-sala.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/ped-sala.jpg" alt="Sala comedor de apartamento con luz natural" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/com-sala.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/com-sala.jpg" alt="Sala de cabaña con sofá blanco y techo en madera" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/lux-cocina.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/lux-cocina.jpg" alt="Cocina abierta con isla y taburetes altos" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/mon-comedor.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/mon-comedor.jpg" alt="Comedor para ocho personas con muro verde y espejo" loading="lazy" decoding="async">
-        </a>
+        <!-- 4 -->
+        <figure class="pf-cell pf-cell--half">
+          <a class="pf-frame" href="assets/propuesta/mon-jacuzzi.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/mon-jacuzzi.jpg" alt="Jacuzzi exterior con muro verde y pasillo de piedra" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>La Montaña 107</span><span>04</span></figcaption>
+        </figure>
+        <figure class="pf-cell pf-cell--half">
+          <a class="pf-frame" href="assets/propuesta/st-recepcion.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/st-recepcion.jpg" alt="Salón de recepción iluminado al anochecer" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Referencia</span><span>Zonas sociales</span></figcaption>
+        </figure>
 
-        <a class="pf-shot curtain reveal" href="assets/propuesta/pre-jacuzzi.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/pre-jacuzzi.jpg" alt="Jacuzzi privado en deck de madera de noche" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/pre-amenidades.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/pre-amenidades.jpg" alt="Amenidades de baño y toalla enrollada sobre repisa" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/lux-buganvilla.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/lux-buganvilla.jpg" alt="Buganvilla fucsia en el jardín del alojamiento" loading="lazy" decoding="async">
-        </a>
-        <a class="pf-shot curtain reveal" href="assets/propuesta/ped-estar.jpg" data-view data-lightbox-item>
-          <img class="curtain-img" src="assets/propuesta/ped-estar.jpg" alt="Zona social de apartamento con televisor y comedor" loading="lazy" decoding="async">
-        </a>
+        <!-- 5 -->
+        <figure class="pf-cell">
+          <a class="pf-frame" href="assets/propuesta/pre-cocina.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/pre-cocina.jpg" alt="Cocina con barra en madera y lámparas de fibra natural" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Cabaña Prestige</span><span>05</span></figcaption>
+        </figure>
+        <figure class="pf-cell">
+          <a class="pf-frame" href="assets/propuesta/st-comedor.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/st-comedor.jpg" alt="Comedor montado con mantelería blanca" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Referencia</span><span>Comedores</span></figcaption>
+        </figure>
+        <figure class="pf-cell">
+          <a class="pf-frame" href="assets/propuesta/lux-sala.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/lux-sala.jpg" alt="Sala con sofá claro y mesa de centro redonda" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Cabaña Luxe</span><span>06</span></figcaption>
+        </figure>
+
+        <!-- 6 -->
+        <figure class="pf-cell pf-cell--wide">
+          <a class="pf-frame" href="assets/propuesta/st-biblioteca.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/st-biblioteca.jpg" alt="Biblioteca con estanterías en madera y luz natural" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Referencia</span><span>Interiorismo</span></figcaption>
+        </figure>
+        <figure class="pf-cell pf-cell--drop">
+          <a class="pf-frame" href="assets/propuesta/lux-habitacion.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/lux-habitacion.jpg" alt="Habitación con cabecero alto y obra gráfica en la pared" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Cabaña Luxe</span><span>07</span></figcaption>
+        </figure>
+
+        <!-- 7 -->
+        <figure class="pf-cell">
+          <a class="pf-frame" href="assets/propuesta/mon-comedor.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/mon-comedor.jpg" alt="Comedor para ocho personas con muro verde y espejo" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>La Montaña 107</span><span>08</span></figcaption>
+        </figure>
+        <figure class="pf-cell">
+          <a class="pf-frame" href="assets/propuesta/pre-amenidades.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/pre-amenidades.jpg" alt="Amenidades de baño y toalla enrollada sobre repisa" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Cabaña Prestige</span><span>09</span></figcaption>
+        </figure>
+        <figure class="pf-cell">
+          <a class="pf-frame" href="assets/propuesta/lux-buganvilla.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/lux-buganvilla.jpg" alt="Buganvilla fucsia en el jardín del alojamiento" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Cabaña Luxe</span><span>10</span></figcaption>
+        </figure>
+
+        <!-- 8 -->
+        <figure class="pf-cell pf-cell--full">
+          <a class="pf-frame" href="assets/propuesta/st-suite.jpg" data-view data-lightbox-item>
+            <img src="assets/propuesta/st-suite.jpg" alt="Suite con cama con dosel y puertas abiertas al jardín" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="pf-cap"><span>Referencia</span><span>Suites</span></figcaption>
+        </figure>
       </div>
-      <p class="pf-gal-note reveal">Toca cualquier foto para verla en grande.</p>
+
+      <p class="pf-gal-note">Las imágenes firmadas <em>Casa Los Curazaos</em>, <em>Cabaña Luxe</em>, <em>Cabaña Prestige</em> y <em>La Montaña 107</em> son trabajo propio. Las marcadas como <em>referencia</em> ilustran el estándar de la entrega mientras se integra el resto del archivo — Amantaka Resort y Riff Hotel, vía Wikimedia Commons (CC BY-SA 4.0 y CC0).</p>
     </div>
   </section>
 
-  <section class="pf-section" id="incluye">
+  <!-- QUÉ INCLUYE -->
+  <section class="pf-section pf-section--noche" id="incluye">
     <div class="wrap">
-      <div class="pf-head reveal">
+      <div class="pf-head">
         <p class="pf-k">Qué incluye</p>
-        <h2>Una sesión completa,<br><em>sin letra menuda.</em></h2>
+        <h2 class="pf-split">Una sesión completa,<br><em>sin letra menuda.</em></h2>
       </div>
       <div class="pf-list">
         <div class="pf-item reveal">
@@ -187,98 +288,91 @@
     </div>
   </section>
 
-  <section class="pf-section pf-section--tinta" id="inversion">
-    <div class="wrap wrap-narrow">
-      <div class="pf-precio reveal">
-        <p class="pf-precio-k">La inversión</p>
-        <p class="pf-precio-num">$1.500.000<sup>COP</sup></p>
-        <p class="pf-precio-cond">Casa o apartamento de hasta 5 habitaciones. Sesión completa, edición incluida y entrega lista para publicar.</p>
-        <div class="pf-precio-tags">
-          <span class="pf-tag pf-tag--oro">Hasta 5 habitaciones</span>
-          <span class="pf-tag">Más de 5 habitaciones: cotización personalizada</span>
-          <span class="pf-tag">Drone según disponibilidad</span>
-        </div>
+  <!-- INVERSIÓN -->
+  <section class="pf-section pf-section--crema pf-precio" id="inversion">
+    <div class="pf-precio-ghost" data-slow="9" aria-hidden="true">1.500.000</div>
+    <div class="wrap wrap-narrow pf-precio-in">
+      <p class="pf-precio-k">La inversión</p>
+      <p class="pf-precio-num">$1.500.000<sup>COP</sup></p>
+      <p class="pf-precio-cond">Casa o apartamento de hasta 5 habitaciones. Sesión completa, edición incluida y entrega lista para publicar.</p>
+      <div class="pf-tags">
+        <span class="pf-tag pf-tag--on">Hasta 5 habitaciones</span>
+        <span class="pf-tag">Más de 5: cotización personalizada</span>
+        <span class="pf-tag">Drone según disponibilidad</span>
       </div>
     </div>
   </section>
 
-  <section class="pf-section" id="proceso">
+  <!-- PROCESO -->
+  <section class="pf-section pf-section--carbon" id="proceso">
     <div class="wrap">
-      <div class="pf-head reveal">
+      <div class="pf-head">
         <p class="pf-k">Cómo trabajamos</p>
-        <h2>Cuatro pasos y<br><em>ninguna sorpresa.</em></h2>
+        <h2 class="pf-split">Cuatro pasos y<br><em>ninguna sorpresa.</em></h2>
       </div>
-      <div>
-        <div class="pf-paso reveal">
+      <div class="pf-stack">
+        <article class="pf-card">
           <b>01</b>
           <div>
             <h3>Agendamos</h3>
             <p>Con el 50% de anticipo separo la fecha. Ese día queda bloqueado en mi agenda y dejo de recibir otros servicios.</p>
           </div>
-        </div>
-        <div class="pf-paso reveal">
+        </article>
+        <article class="pf-card">
           <b>02</b>
           <div>
             <h3>La sesión</h3>
-            <p>Recorro el alojamiento, lo ambiento y fotografío espacio por espacio. Al terminar ese mismo día se cancela el 50% restante.</p>
+            <p>Recorro el alojamiento, lo ambiento y fotografío espacio por espacio. Al terminar, ese mismo día se cancela el 50% restante.</p>
           </div>
-        </div>
-        <div class="pf-paso reveal">
+        </article>
+        <article class="pf-card">
           <b>03</b>
           <div>
             <h3>Primera entrega</h3>
             <p>Tienes la selección editada máximo 15 días después de la sesión, lista para revisar.</p>
           </div>
-        </div>
-        <div class="pf-paso reveal">
+        </article>
+        <article class="pf-card">
           <b>04</b>
           <div>
             <h3>Ajustes y cierre</h3>
             <p>Me indicas las correcciones y las devuelvo en una semana por ronda. Cerramos cuando apruebes la galería completa.</p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="pf-section pf-section--tinta" id="condiciones">
+  <!-- CONDICIONES -->
+  <section class="pf-section pf-section--claro" id="condiciones">
     <div class="wrap">
-      <div class="pf-head reveal">
+      <div class="pf-head">
         <p class="pf-k">Condiciones del servicio</p>
-        <h2>Lo que acordamos,<br><em>por escrito.</em></h2>
+        <h2 class="pf-split">Lo que acordamos,<br><em>por escrito.</em></h2>
       </div>
-      <div class="pf-terminos">
-        <ol class="reveal">
+      <div class="pf-terms reveal">
+        <ol>
           <li><strong>Pagos.</strong> 50% de anticipo para agendar. El 50% restante se cancela el mismo día, al terminar la toma fotográfica.</li>
           <li><strong>Cancelaciones.</strong> El anticipo no es reembolsable: con él separo mi agenda y dejo de recibir otros servicios para esa fecha. En caso de imprevistos, la sesión puede reagendarse hasta tres veces.</li>
           <li><strong>Entregas.</strong> La primera edición se entrega máximo 15 días después de la sesión. Cada ronda de correcciones solicitada toma una semana adicional.</li>
           <li><strong>Uso del material.</strong> Las fotos podrán usarse en mis redes sociales y portafolio, a menos que el cliente indique explícitamente lo contrario.</li>
           <li><strong>Cobertura de la tarifa.</strong> Aplica a casas o apartamentos de hasta 5 habitaciones. Por encima de ese tamaño se cotiza aparte.</li>
-          <li><strong>Aceptación.</strong> El envío del comprobante de pago confirma la aceptación de estas condiciones.</li>
+          <li><strong>Aceptación.</strong> El envío del comprobante de pago confirma la aceptación de estas condiciones. Los datos para la transferencia los envío por WhatsApp al agendar.</li>
         </ol>
-        <aside class="pf-pago reveal">
-          <p class="pf-k" style="margin-bottom:0">Datos para el pago</p>
-          <dl>
-            <dt>Método</dt>
-            <dd>Transferencia con llave Bre-B</dd>
-            <dt>A nombre de</dt>
-            <dd>Bayron Londoño</dd>
-            <dt>Cuenta Nubank</dt>
-            <dd>@BLC257</dd>
-          </dl>
-          <p class="pf-nota">Envíame el comprobante por WhatsApp y te confirmo la fecha de la sesión de inmediato.</p>
-        </aside>
       </div>
     </div>
   </section>
 
+  <!-- CIERRE -->
   <section class="pf-cierre">
+    <div class="pf-cierre-bg" data-slow="10" aria-hidden="true">
+      <img src="assets/propuesta/pre-terraza.jpg" alt="" loading="lazy" decoding="async">
+    </div>
     <div class="wrap wrap-narrow">
-      <h2 class="reveal">Tu alojamiento ya es bueno.<br><em>Falta que se note.</em></h2>
+      <h2 class="pf-split">Tu alojamiento ya es bueno.<br><em>Falta que se note.</em></h2>
       <p class="reveal">Escríbeme con la dirección del inmueble y el número de habitaciones, y te confirmo la fecha más cercana disponible.</p>
       <div class="pf-actions reveal">
-        <a class="btn btn-oro" data-whatsapp data-wa-msg="Hola Bayron, vi tu propuesta de fotografía para alojamientos y quiero agendar una sesión." href="#" hidden>Agendar por WhatsApp</a>
-        <a class="btn btn-ghost" href="mailto:bayronlondonoc@gmail.com?subject=Propuesta%20de%20fotograf%C3%ADa%20para%20mi%20alojamiento">Escribir por correo</a>
+        <a class="btn btn-oro" data-magnet data-whatsapp data-wa-msg="Hola Bayron, vi tu propuesta de fotografía para alojamientos y quiero agendar una sesión." href="#" hidden>Agendar por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -292,6 +386,8 @@
       Fotografía de alojamientos turísticos · Antioquia, Colombia
       <span class="footer-sep">·</span>
       <a href="index.html">bayronlondono.com</a>
+      <span class="footer-sep">·</span>
+      <a data-instagram href="#" hidden>@bayronlondonoc</a>
     </p>
     <p class="footer-meta">© <span data-year>2026</span> Bayron Londoño · Propuesta privada</p>
   </div>
@@ -303,7 +399,10 @@
   <img src="" alt="">
 </dialog>
 
-<script defer src="lib/manifest.js?v=20260801"></script>
-<script defer src="main.js?v=20260801"></script>
+<script defer src="lib/gsap.min.js"></script>
+<script defer src="lib/ScrollTrigger.min.js"></script>
+<script defer src="lib/manifest.js?v=20260802"></script>
+<script defer src="main.js?v=20260802"></script>
+<script defer src="propuesta.js?v=20260802"></script>
 </body>
 </html>
