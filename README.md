@@ -13,6 +13,7 @@ HTML + CSS + JavaScript vanilla. Sin frameworks, sin build step. GSAP + ScrollTr
 index.html        página principal (one-page)
 creditos.html     atribución de imágenes provisionales (Creative Commons)
 branding/         manual de marca interno — solo por URL directa, no indexado
+propuestas/       propuestas comerciales privadas, una carpeta por cliente — no indexadas
 styles.css        estilos (design system de marca)
 main.js           interacciones (reveals, nav, parallax)
 lib/manifest.js   datos de contacto y marca (editar aquí WhatsApp/Instagram)
