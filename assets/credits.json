@@ -1,14 +1,14 @@
 {
   "hero": {
-    "src": "assets/img/hero.jpg",
-    "title": "el camino",
-    "creator": "medea_material",
-    "creator_url": "https://www.flickr.com/photos/18618970@N00",
-    "license": "by",
+    "src": "assets/img/hero-v2.jpg",
+    "title": "Cordillera Central - Quindío - Colombia",
+    "creator": "Alejandro Bayer Tamayo",
+    "creator_url": "",
+    "license": "by-sa",
     "license_version": "2.0",
-    "license_url": "https://creativecommons.org/licenses/by/2.0/",
-    "foreign_landing_url": "https://www.flickr.com/photos/18618970@N00/3364495374",
-    "source": "flickr"
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "foreign_landing_url": "https://commons.wikimedia.org/wiki/File:Cordillera_Central_-_Quind%C3%ADo_-_Colombia_(14566020037).jpg",
+    "source": "wikimedia"
   },
   "foto-ruta": {
     "src": "assets/img/foto-ruta.jpg",
@@ -66,15 +66,15 @@
     "source": "flickr"
   },
   "foto-arq-1": {
-    "src": "assets/img/foto-arq-1.jpg",
-    "title": "Angular bars",
-    "creator": "mac_ivan",
-    "creator_url": "https://www.flickr.com/photos/25100842@N08",
+    "src": "assets/img/foto-arq-1-v2.jpg",
+    "title": "( ) () ( )",
+    "creator": "Rosmarie Voegtli",
+    "creator_url": "",
     "license": "by",
     "license_version": "2.0",
     "license_url": "https://creativecommons.org/licenses/by/2.0/",
-    "foreign_landing_url": "https://www.flickr.com/photos/25100842@N08/7178172305",
-    "source": "flickr"
+    "foreign_landing_url": "https://commons.wikimedia.org/wiki/File:(_)_()_(_)_-_Flickr_-_Rosmarie_Voegtli.jpg",
+    "source": "wikimedia"
   },
   "foto-arq-2": {
     "src": "assets/img/foto-arq-2.jpg",
@@ -163,5 +163,27 @@
     "license_url": "https://creativecommons.org/licenses/by/2.0/",
     "foreign_landing_url": "https://www.flickr.com/photos/56796376@N00/8806304640",
     "source": "flickr"
+  },
+  "rc-guatape": {
+    "src": "assets/img/rc-guatape-v2.webp",
+    "title": "El Peñón de Guatapé from a highway bridge",
+    "creator": "Elena.laps",
+    "creator_url": "",
+    "license": "by-sa",
+    "license_version": "4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "foreign_landing_url": "https://commons.wikimedia.org/wiki/File:El_Pe%C3%B1%C3%B3n_de_Guatap%C3%A9_from_a_highway_bridge.jpg",
+    "source": "wikimedia"
+  },
+  "pm-hotel-terra": {
+    "src": "assets/img/pm-hotel-terra.webp",
+    "title": "Swimming pool at Hotel Terra Barichara",
+    "creator": "Bernard Gagnon",
+    "creator_url": "",
+    "license": "by-sa",
+    "license_version": "4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "foreign_landing_url": "https://commons.wikimedia.org/wiki/File:Swimming_pool_at_Hotel_Terra_Barichara.jpg",
+    "source": "wikimedia"
   }
 }
