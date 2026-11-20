@@ -186,6 +186,19 @@ h3 { font-size: clamp(22px, 2.6vw, 30px); }
 .nav-links a:hover { opacity: 1; }
 .nav-links a:hover::after { transform: scaleX(1); }
 .nav-cta { color: var(--arena) !important; }
+/* Portafolio: el botón más destacado del menú (relleno, con el color de cada página) */
+.nav-links a { white-space: nowrap; }
+.nav-links a.nav-portafolio {
+  opacity: 1; padding: 9px 20px; border-radius: 999px;
+  background: var(--arena); border: 1px solid var(--arena); color: var(--tinta) !important;
+  transition: filter 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+.nav-links a.nav-portafolio::after { display: none; }
+.nav-links a.nav-portafolio:hover { filter: brightness(1.1); transform: translateY(-1px); }
+body.page-ia .nav-links a.nav-portafolio { background: var(--ia-cyan); border-color: var(--ia-cyan); color: var(--ia-bg) !important; }
+body.page-raices .nav-links a.nav-portafolio { background: var(--rc-atardecer); border-color: var(--rc-atardecer); color: var(--rc-arena) !important; }
+body.page-vereda .nav-links a.nav-portafolio { background: var(--vr-panela); border-color: var(--vr-panela); color: var(--vr-tinta) !important; }
+
 
 .nav-toggle { display: none; flex-direction: column; gap: 7px; padding: 10px 4px; z-index: 102; }
 .nav-toggle span { display: block; width: 26px; height: 1px; background: var(--ink); transition: transform 0.5s var(--ease-out), opacity 0.5s var(--ease-out); }
@@ -675,8 +688,8 @@ body.page-vereda .quote { background: var(--vr-tierra); }
   .servicio-row { grid-template-columns: 64px 1fr; }
   .fortaleza { grid-template-columns: 52px 1fr; }
 }
-/* Menú hamburguesa hasta 1099px — el nav completo (6 ítems) solo en desktop ancho */
-@media (max-width: 1099px) {
+/* Menú hamburguesa hasta 1279px — el nav completo (7 ítems) solo en desktop ancho */
+@media (max-width: 1279px) {
   .nav-toggle { display: flex; }
   .nav-links {
     position: fixed; inset: 0; z-index: 101;
