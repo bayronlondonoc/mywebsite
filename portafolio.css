@@ -72,29 +72,47 @@
 .po-hcard { width: min(78vw, 620px); scroll-snap-align: center; display: block; }
 .po-hcard .po-browser { transition: transform 0.8s var(--ease-out); }
 .po-hcard:hover .po-browser { transform: translateY(-8px); }
-.po-hcard-meta { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: baseline; margin-top: 20px; }
+.po-hcard-meta { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; row-gap: 8px; align-items: baseline; margin-top: 18px; }
+.po-hcard-meta .po-go { grid-column: 2; }
 .po-hcard-meta h3 { font-size: clamp(22px, 2.3vw, 28px); }
 .po-hcard-meta p { font-size: 14px; opacity: 0.7; margin-top: 4px; }
 .po-h-hint { display: flex; align-items: center; gap: 16px; margin-top: 28px; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.6; }
 .po-h-bar { width: 140px; height: 1px; background: var(--line-dark); overflow: hidden; }
 .po-h-bar i { display: block; height: 100%; width: 100%; background: var(--arena); transform: scaleX(0.08); transform-origin: left; }
-/* Con movimiento: la sección se fija y el riel avanza con el scroll */
-html.po-motion .po-h { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: calc(var(--po-nav) + var(--po-cats)); }
+/* Con movimiento (escritorio): el bloque se queda pegado arriba (sticky) y el riel
+   avanza con el scroll. El alto del bloque lo calcula portafolio.js. */
+html.po-motion .po-sec-hoteles { padding: 0; overflow: visible; }
+html.po-motion .po-h-scene { position: relative; }
+html.po-motion .po-h {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-start; justify-content: safe center;
+  padding-top: calc(var(--po-nav) + var(--po-cats) + 12px); padding-bottom: 12px;
+}
 html.po-motion .po-h-viewport { overflow: visible; scroll-snap-type: none; }
-html.po-motion .po-sec-hoteles { padding: 0; }
-html.po-motion .po-sec-hoteles .po-sec-head { margin-bottom: clamp(24px, 3vw, 40px); }
-html.po-motion .po-hcard { width: min(46vw, 640px); }
+html.po-motion .po-h-track { will-change: transform; }
+html.po-motion .po-sec-hoteles .po-sec-head { margin-bottom: clamp(16px, 3vh, 40px); }
+/* El ancho de cada tarjeta depende del alto de la pantalla, para que siempre quepa completa */
+html.po-motion .po-hcard { width: min(46vw, 640px, max(260px, calc((100vh - 590px) * 1.6))); width: min(46vw, 640px, max(260px, calc((100svh - 590px) * 1.6))); }
+@media (max-height: 780px) {
+  html.po-motion .po-sec-hoteles .po-sec-head p:not(.po-sec-num) { display: none; }
+  html.po-motion .po-sec-hoteles h2 { font-size: clamp(30px, 5.6vh, 46px); }
+  html.po-motion .po-sec-hoteles .po-sec-num { margin-bottom: 10px; }
+  html.po-motion .po-hcard { width: min(46vw, 640px, max(240px, calc((100vh - 470px) * 1.6))); width: min(46vw, 640px, max(240px, calc((100svh - 470px) * 1.6))); }
+  html.po-motion .po-hcard-meta p { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+  html.po-motion .po-h-hint { margin-top: 14px; }
+  html.po-motion .po-hcard-meta { margin-top: 12px; }
+}
 
 /* --- 02 Spa: la pantalla se recorre con el scroll --- */
 .po-sec-spa { background: #EEEDE4; color: var(--tinta); padding: 0; }
 .po-sec-spa h2 em { color: #6f7a55; }
 .po-sec-spa .po-sec-num, .po-sec-spa .po-link { color: #6f7a55; }
 .po-tour { height: 260vh; }
-.po-tour-sticky { position: sticky; top: 0; min-height: 100vh; display: flex; align-items: center; padding: calc(var(--po-nav) + var(--po-cats) + 20px) 0 40px; }
+.po-tour-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: flex; align-items: center; padding: calc(var(--po-nav) + var(--po-cats) + 16px) 0 24px; }
 .po-tour-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(30px, 5vw, 80px); align-items: center; width: 100%; }
 .po-tour-info h3 { margin-top: 30px; font-size: clamp(24px, 2.6vw, 32px); }
 .po-tour-info p { margin-top: 12px; opacity: 0.82; max-width: 46ch; }
-.po-tour-devices { position: relative; }
+.po-tour-devices { position: relative; width: min(100%, calc((100vh - 230px) * 1.45)); width: min(100%, calc((100svh - 230px) * 1.45)); justify-self: center; }
 .po-laptop-screen { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 14px 14px 0 0; border: 12px solid #191715; border-bottom-width: 16px; background: #000; }
 .po-tour-img { position: absolute; top: 0; left: 0; width: 100%; height: auto; will-change: transform; }
 .po-laptop-base { height: 16px; margin: 0 -7%; background: linear-gradient(#d8d4cb, #a9a49a); border-radius: 0 0 18px 18px; position: relative; }
@@ -123,13 +141,14 @@ html.po-motion .po-hcard { width: min(46vw, 640px); }
   padding: clamp(22px, 3vw, 40px); border-radius: 22px; background: #FAF7F1; border: 1px solid rgba(107,74,53,0.14);
   box-shadow: 0 30px 60px -40px rgba(60,40,25,0.45); transform-origin: center top; will-change: transform;
 }
+.po-stack-card .po-browser img { max-height: calc(100vh - 320px); max-height: calc(100svh - 320px); min-height: 160px; }
 .po-stack-card h3 { margin-top: 8px; font-size: clamp(26px, 3vw, 36px); color: var(--vr-palma); }
 .po-stack-card p { margin-top: 12px; opacity: 0.8; }
 
 /* --- 05 Turismo: la imagen se abre --- */
 .po-sec-turismo { background: #1a0f0b; padding: 0; }
 .po-expand { height: 230vh; }
-.po-expand-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.po-expand-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .po-expand-head { position: absolute; top: calc(var(--po-nav) + var(--po-cats) + 28px); left: 0; right: 0; z-index: 3; text-align: center; }
 .po-expand-head h2 { margin: 0 auto; }
 .po-expand-fig { position: absolute; inset: 0; clip-path: inset(38% 22% 12% 22% round 28px); will-change: clip-path; }
@@ -137,6 +156,14 @@ html.po-motion .po-hcard { width: min(46vw, 640px); }
 .po-expand-fig::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,15,11,0.7), transparent 45%); }
 .po-expand-text { position: absolute; right: var(--gutter); bottom: 6vh; z-index: 3; width: min(440px, calc(100% - 2 * var(--gutter))); padding: clamp(22px, 2.6vw, 34px); border-radius: 18px; background: rgba(26,15,11,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(230,202,178,0.16); opacity: 0; transform: translateY(30px); }
 .po-expand-text p { opacity: 0.85; margin-top: 10px; }
+.po-expand-shot { margin-bottom: 18px; }
+/* Pantallas bajas: el panel final va en horizontal (captura a la izquierda) para que quepa */
+@media (max-height: 780px) and (min-width: 720px) {
+  .po-expand-text { width: min(700px, calc(100% - 2 * var(--gutter))); display: grid; grid-template-columns: 240px 1fr; column-gap: 22px; align-items: start; bottom: 4vh; }
+  .po-expand-shot { grid-row: 1 / span 3; margin-bottom: 0; }
+  .po-expand-text p { font-size: 14.5px; }
+}
+.po-expand-shot .po-browser-bar { height: 24px; }
 .po-sec-turismo .po-link, .po-sec-turismo .po-sec-num, .po-sec-turismo h2 em { color: var(--rc-arena); }
 
 /* --- 06 Inmobiliaria: foco que sigue al cursor --- */

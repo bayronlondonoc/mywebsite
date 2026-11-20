@@ -1,7 +1,10 @@
 /* =============================================================
    PORTAFOLIO — movimientos de cada sección.
-   Usa GSAP + ScrollTrigger (lib/) cuando hay; sin ellos o con
-   "reducir movimiento", la página queda estática y legible.
+   Los efectos de scroll usan "position: sticky" + el avance real de
+   cada sección (getBoundingClientRect en cada cuadro), así nunca se
+   salen de su sección aunque cambie el alto de la página (fuentes,
+   imágenes, zoom o ventana pequeña). Sin JS o con "reducir
+   movimiento", la página queda estática y legible.
    ============================================================= */
 (function () {
   "use strict";
@@ -10,10 +13,44 @@
   var $$ = function (sel, scope) { return Array.prototype.slice.call((scope || document).querySelectorAll(sel)); };
   var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
-  var hasGsap = function () { return !!(window.gsap && window.ScrollTrigger); };
+  var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
+  var lerp = function (a, b, t) { return a + (b - a) * t; };
 
   function safe(fn, name) {
     try { fn(); } catch (e) { console.warn("[portafolio:" + name + "]", e); }
+  }
+
+  /* --- Motor de escenas: cada escena recibe su avance (0 → 1) --- */
+  var scenes = [];
+  var layouts = [];
+  var queued = false;
+
+  // Avance de un bloque alto con un hijo "sticky": 0 cuando su borde superior
+  // toca la parte de arriba de la pantalla, 1 cuando su borde inferior llega abajo.
+  function progressOf(el) {
+    var r = el.getBoundingClientRect();
+    var total = r.height - window.innerHeight;
+    if (total <= 0) return r.top <= 0 ? 1 : 0;
+    return clamp(-r.top / total, 0, 1);
+  }
+  function near(el) {
+    var r = el.getBoundingClientRect();
+    return r.bottom > -window.innerHeight && r.top < window.innerHeight * 2;
+  }
+  function frame() {
+    queued = false;
+    scenes.forEach(function (s) { if (near(s.el)) s.update(progressOf(s.el)); });
+  }
+  function request() {
+    if (!queued) { queued = true; requestAnimationFrame(frame); }
+  }
+  function relayout() {
+    layouts.forEach(function (fn) { fn(); });
+    request();
+  }
+  function addScene(el, update, layout) {
+    scenes.push({ el: el, update: update });
+    if (layout) layouts.push(layout);
   }
 
   /* --- Menú de categorías: resalta la sección visible --- */
@@ -41,36 +78,39 @@
     $$("[data-po-sec]").forEach(function (s) { io.observe(s); });
   }
 
-  /* --- 01 Hoteles: la sección se fija y el riel avanza en horizontal --- */
+  /* --- 01 Hoteles: la sección se queda quieta y el riel avanza en horizontal --- */
   function initHoteles() {
-    var wrap = $("[data-po-hscroll]");
+    var scene = $("[data-po-hscroll]");
     var track = $("[data-po-track]");
+    var vp = $(".po-h-viewport");
     var bar = $("[data-po-progress]");
-    if (!wrap || !track) return;
-    if (reduced || !hasGsap() || !matchMedia("(min-width: 900px)").matches) {
-      // Celular: deslizar con el dedo, y la barra sigue el avance.
-      var vp = $(".po-h-viewport", wrap);
-      if (vp && bar) vp.addEventListener("scroll", function () {
-        var max = vp.scrollWidth - vp.clientWidth;
-        bar.style.transform = "scaleX(" + Math.max(0.08, max ? vp.scrollLeft / max : 1) + ")";
-      }, { passive: true });
-      return;
+    if (!scene || !track || !vp) return;
+    var desktop = matchMedia("(min-width: 900px)");
+    var overflow = 0;
+
+    function setBar(p) { if (bar) bar.style.transform = "scaleX(" + Math.max(0.08, p) + ")"; }
+
+    // Celular / sin movimiento: el riel se desliza con el dedo.
+    vp.addEventListener("scroll", function () {
+      if (document.documentElement.classList.contains("po-motion")) return;
+      var max = vp.scrollWidth - vp.clientWidth;
+      setBar(max ? vp.scrollLeft / max : 1);
+    }, { passive: true });
+
+    function layout() {
+      var on = desktop.matches && !reduced;
+      document.documentElement.classList.toggle("po-motion", on);
+      if (!on) { scene.style.height = ""; track.style.transform = ""; return; }
+      overflow = Math.max(0, track.scrollWidth - vp.clientWidth);
+      // Alto del bloque = una pantalla + lo que hay que recorrer en horizontal.
+      scene.style.height = (window.innerHeight + overflow) + "px";
     }
-    document.documentElement.classList.add("po-motion");
-    var distance = function () { return Math.max(0, track.scrollWidth - window.innerWidth); };
-    gsap.to(track, {
-      x: function () { return -distance(); },
-      ease: "none",
-      scrollTrigger: {
-        trigger: wrap,
-        start: "top top",
-        end: function () { return "+=" + distance(); },
-        pin: true,
-        scrub: 0.8,
-        invalidateOnRefresh: true,
-        onUpdate: function (self) { if (bar) bar.style.transform = "scaleX(" + Math.max(0.08, self.progress) + ")"; }
-      }
-    });
+    addScene(scene, function (p) {
+      if (!document.documentElement.classList.contains("po-motion")) return;
+      track.style.transform = "translate3d(" + (-overflow * p).toFixed(1) + "px,0,0)";
+      setBar(p);
+    }, layout);
+    if (typeof ResizeObserver !== "undefined") new ResizeObserver(relayout).observe(track);
   }
 
   /* --- 02 Spa: el sitio completo se recorre dentro del portátil --- */
@@ -78,19 +118,15 @@
     var tour = $("[data-po-tour]");
     var img = $("[data-po-tour-img]");
     var screen = $("[data-po-screen]");
-    if (!tour || !img || !screen || reduced || !hasGsap()) return;
-    var run = function () {
-      gsap.to(img, {
-        y: function () { return -Math.max(0, img.offsetHeight - screen.clientHeight); },
-        ease: "none",
-        scrollTrigger: { trigger: tour, start: "top top", end: "bottom bottom", scrub: 0.6, invalidateOnRefresh: true }
-      });
-      gsap.fromTo(".po-tour-phone", { y: 60 }, {
-        y: -40, ease: "none",
-        scrollTrigger: { trigger: tour, start: "top top", end: "bottom bottom", scrub: 0.6 }
-      });
-    };
-    if (img.complete) run(); else img.addEventListener("load", function () { run(); ScrollTrigger.refresh(); }, { once: true });
+    var phone = $(".po-tour-phone");
+    if (!tour || !img || !screen || reduced) return;
+    var travel = 0;
+    function layout() { travel = Math.max(0, img.offsetHeight - screen.clientHeight); }
+    img.addEventListener("load", relayout);
+    addScene(tour, function (p) {
+      img.style.transform = "translate3d(0," + (-travel * p).toFixed(1) + "px,0)";
+      if (phone) phone.style.transform = "translate3d(0," + lerp(60, -40, p).toFixed(1) + "px,0)";
+    }, layout);
   }
 
   /* --- 03 Marca personal: relieve 3D que sigue al cursor --- */
@@ -112,15 +148,22 @@
 
   /* --- 04 Café: cada tarjeta se encoge cuando la siguiente le pasa por encima --- */
   function initStack() {
-    if (reduced || !hasGsap()) return;
+    if (reduced) return;
+    var box = $("[data-po-stack]");
     var cards = $$(".po-stack-card");
-    cards.forEach(function (card, i) {
-      var next = cards[i + 1];
-      if (!next) return;
-      gsap.fromTo(card, { scale: 1, filter: "brightness(1)" }, {
-        scale: 0.93, filter: "brightness(0.94)", ease: "none",
-        scrollTrigger: { trigger: next, start: "top bottom", end: "top 30%", scrub: true }
-      });
+    if (!box || cards.length < 2) return;
+    scenes.push({
+      el: box,
+      update: function () {
+        var vh = window.innerHeight;
+        cards.forEach(function (card, i) {
+          var next = cards[i + 1];
+          if (!next) return;
+          var t = clamp((vh - next.getBoundingClientRect().top) / (vh * 0.7), 0, 1);
+          card.style.transform = "scale(" + (1 - 0.07 * t).toFixed(4) + ")";
+          card.style.filter = t > 0 ? "brightness(" + (1 - 0.06 * t).toFixed(3) + ")" : "";
+        });
+      }
     });
   }
 
@@ -128,15 +171,31 @@
   function initExpand() {
     var box = $("[data-po-expand]");
     var fig = $("[data-po-expand-fig]");
+    var img = fig && $("img", fig);
+    var head = $(".po-expand-head");
     var text = $("[data-po-expand-text]");
-    if (!box || !fig || reduced || !hasGsap()) return;
-    var small = matchMedia("(max-width: 719px)").matches;
-    var tl = gsap.timeline({ scrollTrigger: { trigger: box, start: "top top", end: "bottom bottom", scrub: 0.7 } });
-    tl.fromTo(fig, { clipPath: small ? "inset(40% 8% 16% 8% round 22px)" : "inset(38% 22% 12% 22% round 28px)" },
-      { clipPath: "inset(0% 0% 0% 0% round 0px)", ease: "none", duration: 1 }, 0)
-      .fromTo($("img", fig), { scale: 1.2 }, { scale: 1, ease: "none", duration: 1 }, 0)
-      .to(".po-expand-head", { opacity: 0, y: -30, ease: "none", duration: 0.25 }, 0.12)
-      .to(text, { opacity: 1, y: 0, ease: "none", duration: 0.35 }, 0.65);
+    if (!box || !fig || reduced) return;
+    var from = [38, 22, 12, 22, 28];
+    function layout() {
+      from = matchMedia("(max-width: 719px)").matches ? [40, 8, 16, 8, 22] : [38, 22, 12, 22, 28];
+    }
+    addScene(box, function (p) {
+      var t = clamp(p / 0.85, 0, 1);
+      var e = 1 - Math.pow(1 - t, 2);
+      fig.style.clipPath = "inset(" + lerp(from[0], 0, e).toFixed(2) + "% " + lerp(from[1], 0, e).toFixed(2) + "% " +
+        lerp(from[2], 0, e).toFixed(2) + "% " + lerp(from[3], 0, e).toFixed(2) + "% round " + lerp(from[4], 0, e).toFixed(1) + "px)";
+      if (img) img.style.transform = "scale(" + lerp(1.2, 1, e).toFixed(4) + ")";
+      if (head) {
+        var h = clamp((p - 0.1) / 0.25, 0, 1);
+        head.style.opacity = (1 - h).toFixed(3);
+        head.style.transform = "translate3d(0," + (-30 * h).toFixed(1) + "px,0)";
+      }
+      if (text) {
+        var k = clamp((p - 0.62) / 0.3, 0, 1);
+        text.style.opacity = k.toFixed(3);
+        text.style.transform = "translate3d(0," + (30 * (1 - k)).toFixed(1) + "px,0)";
+      }
+    }, layout);
   }
 
   /* --- 06 Inmobiliaria: foco de luz que sigue al cursor (o se pasea solo) --- */
@@ -188,7 +247,6 @@
         p.hidden = k !== i;
         p.classList.toggle("is-active", k === i);
       });
-      // reinicia la barra de progreso
       var bar = $(".po-sys-bar i", tabs[i]);
       if (bar) { bar.style.animation = "none"; void bar.offsetWidth; bar.style.animation = ""; }
       schedule();
@@ -239,7 +297,6 @@
   }
 
   function boot() {
-    if (hasGsap()) { try { gsap.registerPlugin(ScrollTrigger); } catch (_) {} }
     safe(initCats, "cats");
     safe(initHoteles, "hoteles");
     safe(initSpa, "spa");
@@ -250,7 +307,11 @@
     safe(initSys, "sys");
     safe(initMag, "mag");
     safe(initFlip, "flip");
-    if (hasGsap()) window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+    relayout();
+    window.addEventListener("scroll", request, { passive: true });
+    window.addEventListener("resize", relayout);
+    window.addEventListener("load", relayout);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
